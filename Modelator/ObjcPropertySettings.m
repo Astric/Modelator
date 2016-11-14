@@ -10,4 +10,8 @@
 
 @implementation ObjcPropertySettings
 
+- (NSArray *)propertyTypes {
+    return @[@"NSString",@"NSArray",@"NSNumber",@"BOOL"];
+}
+
 @end

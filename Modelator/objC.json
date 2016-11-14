@@ -7,5 +7,6 @@
     "name":"Objective-C",
     "parserClass":"ObjCClassParser",
     "propertySettingsClass":"ObjcPropertySettings",
-    "propertyView":"ObjCView"
+    "propertyView":"ObjCView",
+    "highlightLanguageName":"objectivec"
 }

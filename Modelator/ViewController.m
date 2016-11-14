@@ -13,15 +13,19 @@
 #import "ModelatorClass.h"
 #import "ModelatorProperty.h"
 #import "PropertyView.h"
+#import "PreviewView.h"
+#import <WebKit/WebKit.h>
 
-@interface ViewController()<NSOutlineViewDelegate, NSOutlineViewDataSource, ImportViewControllerDelegate, NSTableViewDelegate, NSTableViewDataSource>
+@interface ViewController()<NSOutlineViewDelegate, NSOutlineViewDataSource, ImportViewControllerDelegate, NSTableViewDelegate, NSTableViewDataSource, NSSplitViewDelegate>
+
 @property (weak) IBOutlet NSOutlineView *outlineView;
 @property (weak) IBOutlet NSView *containerView;
-
-
+@property (weak) IBOutlet NSView *previewContainerView;
 @property (nonatomic, strong) ObjCClassParser *classParser;
 @property (nonatomic, weak) id importViewController;
 @property (nonatomic, strong) NSURL *selectedFileURL;
+@property (weak) IBOutlet NSSplitView *horizontalSplitView;
+
 @end
 
 @implementation ViewController
@@ -29,14 +33,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Do any additional setup after loading the view.
+
 }
 
+- (void)viewWillAppear {
+    [super viewWillAppear];
+    [self.previewContainerView setWantsLayer:YES];
+    [self.previewContainerView.layer setBackgroundColor:[[NSColor colorWithRed:0.17 green:0.17 blue:0.17 alpha:1] CGColor]];
+    [self.containerView setWantsLayer:YES];
+    [self.containerView.layer setBackgroundColor:[[NSColor whiteColor] CGColor]];    
+}
 
 - (void)setRepresentedObject:(id)representedObject {
     [super setRepresentedObject:representedObject];
     
     // Update the view, if already loaded.
+
 }
 
 - (void)openDocument:(id)sender {
@@ -62,6 +74,7 @@
     NSString *rootClass = [[[jsonURL absoluteString] lastPathComponent] stringByDeletingPathExtension];
     self.classParser = [[ObjCClassParser alloc] initWithJSON:json rootClassName:rootClass];
     [self displayConversionResults];
+    [self loadPreviewView];
 }
 
 - (void)showErrorWithText:(NSString *)text {
@@ -80,6 +93,21 @@
         self.importViewController = segue.destinationController;
     }
     
+}
+- (void)loadPreviewView {
+    NSArray *arr = nil;
+    [[NSBundle mainBundle] loadNibNamed:@"PreviewView" owner:self topLevelObjects:&arr];
+    NSView *view = nil;
+    for (id topLevelObject in arr) {
+        if ([topLevelObject isKindOfClass:[NSView class]]) {
+            view = topLevelObject;
+            break;
+        }
+    }
+    view.frame = self.previewContainerView.bounds;
+    view.autoresizingMask = NSViewMinXMargin | NSViewWidthSizable | NSViewMaxXMargin | NSViewMinYMargin | NSViewHeightSizable | NSViewMaxYMargin;
+    [self.previewContainerView addSubview:view];
+
 }
 #pragma mark - ImportViewControllerDelegate
 
@@ -125,6 +153,7 @@
 }
 
 - (void)presentPropertyViewForItem:(id)item {
+    [[self.containerView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
     if ([item isKindOfClass:[ModelatorProperty class]]) {
         NSString *viewClassName = [[[ModuleManager sharedManager] selectedModule] propertyViewClassName];
         NSArray *arr = nil;
@@ -136,11 +165,17 @@
                 break;
             }
         }
+        
         if (view) {
             [(id)view setAssocciatedProperty:item];
-            [[self.containerView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+            view.frame = self.containerView.bounds;
+            view.autoresizingMask = NSViewMinXMargin | NSViewWidthSizable | NSViewMaxXMargin | NSViewMinYMargin | NSViewHeightSizable | NSViewMaxYMargin;
             [self.containerView addSubview:view];
         }
     }
 }
+#pragma mark - splitview delegate
+//- (void)splitViewWillResizeSubviews:(NSNotification *)notification {
+//    [self.horizontalSplitView adjustSubviews];
+//}
 @end

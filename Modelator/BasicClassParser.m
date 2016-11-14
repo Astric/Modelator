@@ -9,6 +9,7 @@
 #import "BasicClassParser.h"
 #import "ModelatorProperty.h"
 #import "ModuleManager.h"
+#import "NSString+InflectorKit.h"
 
 @interface BasicClassParser()
 
@@ -36,7 +37,7 @@
 - (void)generateClassWithRoodObject:(id)rootObject classArray:(NSMutableArray *)classArray className:(NSString *)className {
     NSMutableArray *propertyArray = [NSMutableArray array];
     ModelatorClass *mClass = [ModelatorClass new];
-    mClass.name = [className capitalizedString];
+    mClass.name = [[className capitalizedString] singularizedString];
     for (id obj in rootObject) {
         if ([rootObject[obj] isKindOfClass:[NSArray class]]) {
             BOOL containsObjects = NO;
@@ -47,13 +48,25 @@
                     break;
                 }
             }
-            if (!containsObjects) {
-                ModelatorProperty *prop = [ModelatorProperty propertyWithName:[self prettyPropretyName:obj] type:[self objectClassToString:rootObject[obj]]];
-                Class aClass = [[ModuleManager sharedManager] selectedModule].propertySettingsClass;
-                id settings = [[aClass alloc] init];
-                prop.propertySettings = settings;
-                [propertyArray addObject:prop];
-            }
+            ModelatorProperty *prop = [ModelatorProperty propertyWithName:[self prettyPropretyName:obj] type:[self objectClassToString:rootObject[obj]]];
+            Class aClass = [[ModuleManager sharedManager] selectedModule].propertySettingsClass;
+            id settings = [[aClass alloc] init];
+            prop.propertySettings = settings;
+            [propertyArray addObject:prop];
+//            if (!containsObjects) {
+//                ModelatorProperty *prop = [ModelatorProperty propertyWithName:[self prettyPropretyName:obj] type:[self objectClassToString:rootObject[obj]]];
+//                Class aClass = [[ModuleManager sharedManager] selectedModule].propertySettingsClass;
+//                id settings = [[aClass alloc] init];
+//                prop.propertySettings = settings;
+//                [propertyArray addObject:prop];
+//            } else {
+//                ModelatorProperty *prop = [ModelatorProperty propertyWithName:obj type:[self objectClassToString:rootObject[obj]]];
+//                Class aClass = [[ModuleManager sharedManager] selectedModule].propertySettingsClass;
+//                id settings = [[aClass alloc] init];
+//                prop.propertySettings = settings;
+//                [propertyArray addObject:prop];
+//
+//            }
         } else if ([rootObject[obj] isKindOfClass:[NSDictionary class]]) {
             [self generateClassWithRoodObject:rootObject[obj] classArray:classArray className:obj];
         } else {
@@ -84,4 +97,6 @@
     [result replaceCharactersInRange:NSMakeRange(0, 1) withString:[[result substringWithRange:NSMakeRange(0, 1)] lowercaseString]];
     return result;
 }
+
+
 @end

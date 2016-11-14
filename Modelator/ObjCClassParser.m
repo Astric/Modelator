@@ -20,7 +20,7 @@
     } else if ([obj isKindOfClass:[NSString class]])  {
         return @"NSString";
     } else if ([obj isKindOfClass:[NSArray class]])  {
-        return @"NSArry";
+        return @"NSArray";
     }
     return @"NSObject";
 }

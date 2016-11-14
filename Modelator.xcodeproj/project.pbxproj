@@ -18,6 +18,8 @@
 		2EC182AE1DD985810087593A /* PreviewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EC182AD1DD985810087593A /* PreviewView.xib */; };
 		2EC182B11DD98E310087593A /* PreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC182B01DD98E310087593A /* PreviewView.m */; };
 		2EC182B31DD98E980087593A /* highlight in Resources */ = {isa = PBXBuildFile; fileRef = 2EC182B21DD98E980087593A /* highlight */; };
+		2EC182B61DD9A2F50087593A /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EC182B51DD9A2F50087593A /* WebKit.framework */; };
+		2EC182B91DD9AA0B0087593A /* ModelatorSplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC182B81DD9AA0B0087593A /* ModelatorSplitView.m */; };
 		2EEC53FC1DD591B2005D988D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EEC53FB1DD591B2005D988D /* AppDelegate.m */; };
 		2EEC53FF1DD591B2005D988D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EEC53FE1DD591B2005D988D /* main.m */; };
 		2EEC54021DD591B2005D988D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EEC54011DD591B2005D988D /* ViewController.m */; };
@@ -29,6 +31,7 @@
 		2EEC54211DD5A0A8005D988D /* ImportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EEC54201DD5A0A8005D988D /* ImportViewController.m */; };
 		2EEC54261DD632BD005D988D /* objCHeader.mtplate in Resources */ = {isa = PBXBuildFile; fileRef = 2EEC54241DD632BD005D988D /* objCHeader.mtplate */; };
 		2EEC54271DD632BD005D988D /* objCImplementation.mtplate in Resources */ = {isa = PBXBuildFile; fileRef = 2EEC54251DD632BD005D988D /* objCImplementation.mtplate */; };
+		A1272DAC1829F573C78BDD46 /* libPods-Modelator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E55D6E34603C4A3E164407C7 /* libPods-Modelator.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +53,9 @@
 		2EC182AF1DD98E310087593A /* PreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreviewView.h; sourceTree = "<group>"; };
 		2EC182B01DD98E310087593A /* PreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreviewView.m; sourceTree = "<group>"; };
 		2EC182B21DD98E980087593A /* highlight */ = {isa = PBXFileReference; lastKnownFileType = folder; path = highlight; sourceTree = "<group>"; };
+		2EC182B51DD9A2F50087593A /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		2EC182B71DD9AA0B0087593A /* ModelatorSplitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelatorSplitView.h; sourceTree = "<group>"; };
+		2EC182B81DD9AA0B0087593A /* ModelatorSplitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelatorSplitView.m; sourceTree = "<group>"; };
 		2EEC53F71DD591B2005D988D /* Modelator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Modelator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EEC53FA1DD591B2005D988D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2EEC53FB1DD591B2005D988D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -69,6 +75,9 @@
 		2EEC54201DD5A0A8005D988D /* ImportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImportViewController.m; sourceTree = "<group>"; };
 		2EEC54241DD632BD005D988D /* objCHeader.mtplate */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = objCHeader.mtplate; sourceTree = "<group>"; };
 		2EEC54251DD632BD005D988D /* objCImplementation.mtplate */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = objCImplementation.mtplate; sourceTree = "<group>"; };
+		CBFC0866050C77B5384FD5A4 /* Pods-Modelator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Modelator.release.xcconfig"; path = "Pods/Target Support Files/Pods-Modelator/Pods-Modelator.release.xcconfig"; sourceTree = "<group>"; };
+		D75A7F4EDA96EB4C464588A9 /* Pods-Modelator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Modelator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Modelator/Pods-Modelator.debug.xcconfig"; sourceTree = "<group>"; };
+		E55D6E34603C4A3E164407C7 /* libPods-Modelator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Modelator.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +85,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EC182B61DD9A2F50087593A /* WebKit.framework in Frameworks */,
+				A1272DAC1829F573C78BDD46 /* libPods-Modelator.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,11 +102,22 @@
 			name = Classes;
 			sourceTree = "<group>";
 		};
+		2EC182B41DD9A2F50087593A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2EC182B51DD9A2F50087593A /* WebKit.framework */,
+				E55D6E34603C4A3E164407C7 /* libPods-Modelator.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		2EEC53EE1DD591B2005D988D = {
 			isa = PBXGroup;
 			children = (
 				2EEC53F91DD591B2005D988D /* Modelator */,
 				2EEC53F81DD591B2005D988D /* Products */,
+				2EC182B41DD9A2F50087593A /* Frameworks */,
+				9427707F0E6123B1A89AFE0D /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -155,6 +177,8 @@
 				2EC182AD1DD985810087593A /* PreviewView.xib */,
 				2EC182AF1DD98E310087593A /* PreviewView.h */,
 				2EC182B01DD98E310087593A /* PreviewView.m */,
+				2EC182B71DD9AA0B0087593A /* ModelatorSplitView.h */,
+				2EC182B81DD9AA0B0087593A /* ModelatorSplitView.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -197,6 +221,15 @@
 			name = ObjC;
 			sourceTree = "<group>";
 		};
+		9427707F0E6123B1A89AFE0D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D75A7F4EDA96EB4C464588A9 /* Pods-Modelator.debug.xcconfig */,
+				CBFC0866050C77B5384FD5A4 /* Pods-Modelator.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -204,9 +237,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2EEC540B1DD591B2005D988D /* Build configuration list for PBXNativeTarget "Modelator" */;
 			buildPhases = (
+				64F3FF2D68D40E0112941908 /* [CP] Check Pods Manifest.lock */,
 				2EEC53F31DD591B2005D988D /* Sources */,
 				2EEC53F41DD591B2005D988D /* Frameworks */,
 				2EEC53F51DD591B2005D988D /* Resources */,
+				A8789A8ABA95530C763CC4F0 /* [CP] Embed Pods Frameworks */,
+				656C03A41F66832851430918 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -269,6 +305,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		64F3FF2D68D40E0112941908 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		656C03A41F66832851430918 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Modelator/Pods-Modelator-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A8789A8ABA95530C763CC4F0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Modelator/Pods-Modelator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2EEC53F31DD591B2005D988D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -283,6 +367,7 @@
 				2EC182A11DD8D4D70087593A /* ObjCClassParser.m in Sources */,
 				2EEC53FF1DD591B2005D988D /* main.m in Sources */,
 				2EEC53FC1DD591B2005D988D /* AppDelegate.m in Sources */,
+				2EC182B91DD9AA0B0087593A /* ModelatorSplitView.m in Sources */,
 				2EC182B11DD98E310087593A /* PreviewView.m in Sources */,
 				2EEC54181DD59976005D988D /* ModelatorClass.m in Sources */,
 				2EC182AC1DD93C090087593A /* PropertyView.m in Sources */,
@@ -312,6 +397,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -359,6 +445,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -383,6 +470,7 @@
 		};
 		2EEC540C1DD591B2005D988D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D75A7F4EDA96EB4C464588A9 /* Pods-Modelator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -396,6 +484,7 @@
 		};
 		2EEC540D1DD591B2005D988D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CBFC0866050C77B5384FD5A4 /* Pods-Modelator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;

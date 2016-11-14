@@ -10,7 +10,7 @@
 #import "ModelatorProperty.h"
 #import "ObjcPropertySettings.h"
 
-@interface ObjCView ()
+@interface ObjCView ()<NSComboBoxDataSource, NSTextFieldDelegate>
 
 @property (weak) IBOutlet NSComboBox *cmbType;
 @property (weak) IBOutlet NSButton *radioStrong;
@@ -22,6 +22,11 @@
 @end
 
 @implementation ObjCView
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    ((NSTextField *)self.cmbType).delegate = self;
+}
 
 - (ObjcPropertySettings *)settings {
     ModelatorProperty *prop = (ModelatorProperty *)self.assocciatedProperty;
@@ -51,6 +56,26 @@
     self.checkCopy.state = settings.copyProperty;
     self.checkNonatomic.state = settings.nonAtomicProperty;
     self.checkReadonly.state = settings.readOnlyProperty;
+    
+    [self.cmbType reloadData];
+    self.cmbType.stringValue =  ((ModelatorProperty *)self.assocciatedProperty).propertyType;
 }
-
+- (NSInteger)numberOfItemsInComboBox:(NSComboBox *)comboBox {
+    return [[self settings].propertyTypes count];
+}
+- (id)comboBox:(NSComboBox *)comboBox objectValueForItemAtIndex:(NSInteger)index {
+    return [self settings].propertyTypes[index];
+}
+- (void)comboBoxSelectionDidChange:(NSNotification *)notification {
+    ((ModelatorProperty *)self.assocciatedProperty).propertyType = [self settings].propertyTypes[[self.cmbType indexOfSelectedItem]];
+}
+- (void)controlTextDidChange:(NSNotification *)obj {
+    ((ModelatorProperty *)self.assocciatedProperty).propertyType = self.cmbType.stringValue;
+}
+//- (NSUInteger)comboBox:(NSComboBox *)comboBox indexOfItemWithStringValue:(NSString *)string {
+//    return [[self settings].propertyTypes indexOfObjectPassingTest:^BOOL(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//        NSRange range = NSMakeRange(0, [string length]);
+//        return [string isEqualToString:[obj substringWithRange:range]];
+//    }];
+//}
 @end
