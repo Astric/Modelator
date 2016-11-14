@@ -1,0 +1,434 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2E5AE3B91DD6FF28006792E6 /* ModuleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E5AE3B81DD6FF28006792E6 /* ModuleManager.m */; };
+		2E5AE3BB1DD77B5B006792E6 /* objC.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E5AE3BA1DD77B5B006792E6 /* objC.json */; };
+		2E5AE3BF1DD77BBE006792E6 /* ModelatorModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E5AE3BE1DD77BBE006792E6 /* ModelatorModule.m */; };
+		2EC182A11DD8D4D70087593A /* ObjCClassParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC182A01DD8D4D70087593A /* ObjCClassParser.m */; };
+		2EC182A41DD8F3640087593A /* ObjcPropertySettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC182A31DD8F3640087593A /* ObjcPropertySettings.m */; };
+		2EC182A61DD92BA70087593A /* ObjCView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EC182A51DD92BA70087593A /* ObjCView.xib */; };
+		2EC182A91DD92DFE0087593A /* ObjCView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC182A81DD92DFE0087593A /* ObjCView.m */; };
+		2EC182AC1DD93C090087593A /* PropertyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC182AB1DD93C090087593A /* PropertyView.m */; };
+		2EC182AE1DD985810087593A /* PreviewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EC182AD1DD985810087593A /* PreviewView.xib */; };
+		2EC182B11DD98E310087593A /* PreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC182B01DD98E310087593A /* PreviewView.m */; };
+		2EC182B31DD98E980087593A /* highlight in Resources */ = {isa = PBXBuildFile; fileRef = 2EC182B21DD98E980087593A /* highlight */; };
+		2EEC53FC1DD591B2005D988D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EEC53FB1DD591B2005D988D /* AppDelegate.m */; };
+		2EEC53FF1DD591B2005D988D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EEC53FE1DD591B2005D988D /* main.m */; };
+		2EEC54021DD591B2005D988D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EEC54011DD591B2005D988D /* ViewController.m */; };
+		2EEC54041DD591B2005D988D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EEC54031DD591B2005D988D /* Assets.xcassets */; };
+		2EEC540F1DD591F9005D988D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EEC540E1DD591F9005D988D /* Main.storyboard */; };
+		2EEC54121DD592D8005D988D /* BasicClassParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EEC54111DD592D8005D988D /* BasicClassParser.m */; };
+		2EEC54181DD59976005D988D /* ModelatorClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EEC54171DD59976005D988D /* ModelatorClass.m */; };
+		2EEC541B1DD59A50005D988D /* ModelatorProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EEC541A1DD59A50005D988D /* ModelatorProperty.m */; };
+		2EEC54211DD5A0A8005D988D /* ImportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EEC54201DD5A0A8005D988D /* ImportViewController.m */; };
+		2EEC54261DD632BD005D988D /* objCHeader.mtplate in Resources */ = {isa = PBXBuildFile; fileRef = 2EEC54241DD632BD005D988D /* objCHeader.mtplate */; };
+		2EEC54271DD632BD005D988D /* objCImplementation.mtplate in Resources */ = {isa = PBXBuildFile; fileRef = 2EEC54251DD632BD005D988D /* objCImplementation.mtplate */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2E5AE3B71DD6FF28006792E6 /* ModuleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleManager.h; sourceTree = "<group>"; };
+		2E5AE3B81DD6FF28006792E6 /* ModuleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModuleManager.m; sourceTree = "<group>"; };
+		2E5AE3BA1DD77B5B006792E6 /* objC.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = objC.json; sourceTree = "<group>"; };
+		2E5AE3BD1DD77BBE006792E6 /* ModelatorModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelatorModule.h; sourceTree = "<group>"; };
+		2E5AE3BE1DD77BBE006792E6 /* ModelatorModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelatorModule.m; sourceTree = "<group>"; };
+		2EC1829F1DD8D4D70087593A /* ObjCClassParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjCClassParser.h; sourceTree = "<group>"; };
+		2EC182A01DD8D4D70087593A /* ObjCClassParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjCClassParser.m; sourceTree = "<group>"; };
+		2EC182A21DD8F3640087593A /* ObjcPropertySettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjcPropertySettings.h; sourceTree = "<group>"; };
+		2EC182A31DD8F3640087593A /* ObjcPropertySettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjcPropertySettings.m; sourceTree = "<group>"; };
+		2EC182A51DD92BA70087593A /* ObjCView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ObjCView.xib; sourceTree = "<group>"; };
+		2EC182A71DD92DFE0087593A /* ObjCView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjCView.h; sourceTree = "<group>"; };
+		2EC182A81DD92DFE0087593A /* ObjCView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjCView.m; sourceTree = "<group>"; };
+		2EC182AA1DD93C090087593A /* PropertyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyView.h; sourceTree = "<group>"; };
+		2EC182AB1DD93C090087593A /* PropertyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyView.m; sourceTree = "<group>"; };
+		2EC182AD1DD985810087593A /* PreviewView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreviewView.xib; sourceTree = "<group>"; };
+		2EC182AF1DD98E310087593A /* PreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreviewView.h; sourceTree = "<group>"; };
+		2EC182B01DD98E310087593A /* PreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreviewView.m; sourceTree = "<group>"; };
+		2EC182B21DD98E980087593A /* highlight */ = {isa = PBXFileReference; lastKnownFileType = folder; path = highlight; sourceTree = "<group>"; };
+		2EEC53F71DD591B2005D988D /* Modelator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Modelator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EEC53FA1DD591B2005D988D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2EEC53FB1DD591B2005D988D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2EEC53FE1DD591B2005D988D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2EEC54001DD591B2005D988D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		2EEC54011DD591B2005D988D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		2EEC54031DD591B2005D988D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2EEC54081DD591B2005D988D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2EEC540E1DD591F9005D988D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		2EEC54101DD592D8005D988D /* BasicClassParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicClassParser.h; sourceTree = "<group>"; };
+		2EEC54111DD592D8005D988D /* BasicClassParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicClassParser.m; sourceTree = "<group>"; };
+		2EEC54161DD59976005D988D /* ModelatorClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelatorClass.h; sourceTree = "<group>"; };
+		2EEC54171DD59976005D988D /* ModelatorClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelatorClass.m; sourceTree = "<group>"; };
+		2EEC54191DD59A50005D988D /* ModelatorProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelatorProperty.h; sourceTree = "<group>"; };
+		2EEC541A1DD59A50005D988D /* ModelatorProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelatorProperty.m; sourceTree = "<group>"; };
+		2EEC541F1DD5A0A8005D988D /* ImportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImportViewController.h; sourceTree = "<group>"; };
+		2EEC54201DD5A0A8005D988D /* ImportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImportViewController.m; sourceTree = "<group>"; };
+		2EEC54241DD632BD005D988D /* objCHeader.mtplate */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = objCHeader.mtplate; sourceTree = "<group>"; };
+		2EEC54251DD632BD005D988D /* objCImplementation.mtplate */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = objCImplementation.mtplate; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2EEC53F41DD591B2005D988D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2E5AE3BC1DD77B94006792E6 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				2E5AE3B71DD6FF28006792E6 /* ModuleManager.h */,
+				2E5AE3B81DD6FF28006792E6 /* ModuleManager.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		2EEC53EE1DD591B2005D988D = {
+			isa = PBXGroup;
+			children = (
+				2EEC53F91DD591B2005D988D /* Modelator */,
+				2EEC53F81DD591B2005D988D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2EEC53F81DD591B2005D988D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2EEC53F71DD591B2005D988D /* Modelator.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2EEC53F91DD591B2005D988D /* Modelator */ = {
+			isa = PBXGroup;
+			children = (
+				2EC182B21DD98E980087593A /* highlight */,
+				2E5AE3BC1DD77B94006792E6 /* Classes */,
+				2EEC54221DD632A1005D988D /* Languages */,
+				2EEC54151DD59952005D988D /* Model */,
+				2EEC54141DD592FF005D988D /* UI */,
+				2EEC54131DD592EA005D988D /* Converters */,
+				2EEC53FD1DD591B2005D988D /* Supporting Files */,
+			);
+			path = Modelator;
+			sourceTree = "<group>";
+		};
+		2EEC53FD1DD591B2005D988D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2EEC54031DD591B2005D988D /* Assets.xcassets */,
+				2EEC54081DD591B2005D988D /* Info.plist */,
+				2EEC53FA1DD591B2005D988D /* AppDelegate.h */,
+				2EEC53FB1DD591B2005D988D /* AppDelegate.m */,
+				2EEC53FE1DD591B2005D988D /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2EEC54131DD592EA005D988D /* Converters */ = {
+			isa = PBXGroup;
+			children = (
+				2EEC54101DD592D8005D988D /* BasicClassParser.h */,
+				2EEC54111DD592D8005D988D /* BasicClassParser.m */,
+			);
+			name = Converters;
+			sourceTree = "<group>";
+		};
+		2EEC54141DD592FF005D988D /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				2EEC540E1DD591F9005D988D /* Main.storyboard */,
+				2EEC54001DD591B2005D988D /* ViewController.h */,
+				2EEC54011DD591B2005D988D /* ViewController.m */,
+				2EEC541F1DD5A0A8005D988D /* ImportViewController.h */,
+				2EEC54201DD5A0A8005D988D /* ImportViewController.m */,
+				2EC182AA1DD93C090087593A /* PropertyView.h */,
+				2EC182AB1DD93C090087593A /* PropertyView.m */,
+				2EC182AD1DD985810087593A /* PreviewView.xib */,
+				2EC182AF1DD98E310087593A /* PreviewView.h */,
+				2EC182B01DD98E310087593A /* PreviewView.m */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		2EEC54151DD59952005D988D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2EEC54161DD59976005D988D /* ModelatorClass.h */,
+				2EEC54171DD59976005D988D /* ModelatorClass.m */,
+				2EEC54191DD59A50005D988D /* ModelatorProperty.h */,
+				2EEC541A1DD59A50005D988D /* ModelatorProperty.m */,
+				2E5AE3BD1DD77BBE006792E6 /* ModelatorModule.h */,
+				2E5AE3BE1DD77BBE006792E6 /* ModelatorModule.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		2EEC54221DD632A1005D988D /* Languages */ = {
+			isa = PBXGroup;
+			children = (
+				2EEC54231DD632AD005D988D /* ObjC */,
+			);
+			name = Languages;
+			sourceTree = "<group>";
+		};
+		2EEC54231DD632AD005D988D /* ObjC */ = {
+			isa = PBXGroup;
+			children = (
+				2E5AE3BA1DD77B5B006792E6 /* objC.json */,
+				2EEC54241DD632BD005D988D /* objCHeader.mtplate */,
+				2EEC54251DD632BD005D988D /* objCImplementation.mtplate */,
+				2EC182A21DD8F3640087593A /* ObjcPropertySettings.h */,
+				2EC182A31DD8F3640087593A /* ObjcPropertySettings.m */,
+				2EC1829F1DD8D4D70087593A /* ObjCClassParser.h */,
+				2EC182A01DD8D4D70087593A /* ObjCClassParser.m */,
+				2EC182A51DD92BA70087593A /* ObjCView.xib */,
+				2EC182A71DD92DFE0087593A /* ObjCView.h */,
+				2EC182A81DD92DFE0087593A /* ObjCView.m */,
+			);
+			name = ObjC;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2EEC53F61DD591B2005D988D /* Modelator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2EEC540B1DD591B2005D988D /* Build configuration list for PBXNativeTarget "Modelator" */;
+			buildPhases = (
+				2EEC53F31DD591B2005D988D /* Sources */,
+				2EEC53F41DD591B2005D988D /* Frameworks */,
+				2EEC53F51DD591B2005D988D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Modelator;
+			productName = Modelator;
+			productReference = 2EEC53F71DD591B2005D988D /* Modelator.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2EEC53EF1DD591B2005D988D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = OliveSoft;
+				TargetAttributes = {
+					2EEC53F61DD591B2005D988D = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 92JE4PEMRB;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 2EEC53F21DD591B2005D988D /* Build configuration list for PBXProject "Modelator" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2EEC53EE1DD591B2005D988D;
+			productRefGroup = 2EEC53F81DD591B2005D988D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2EEC53F61DD591B2005D988D /* Modelator */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2EEC53F51DD591B2005D988D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EEC54041DD591B2005D988D /* Assets.xcassets in Resources */,
+				2EC182B31DD98E980087593A /* highlight in Resources */,
+				2EEC540F1DD591F9005D988D /* Main.storyboard in Resources */,
+				2EEC54261DD632BD005D988D /* objCHeader.mtplate in Resources */,
+				2EC182A61DD92BA70087593A /* ObjCView.xib in Resources */,
+				2E5AE3BB1DD77B5B006792E6 /* objC.json in Resources */,
+				2EEC54271DD632BD005D988D /* objCImplementation.mtplate in Resources */,
+				2EC182AE1DD985810087593A /* PreviewView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2EEC53F31DD591B2005D988D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E5AE3B91DD6FF28006792E6 /* ModuleManager.m in Sources */,
+				2EEC54121DD592D8005D988D /* BasicClassParser.m in Sources */,
+				2EC182A91DD92DFE0087593A /* ObjCView.m in Sources */,
+				2EEC54021DD591B2005D988D /* ViewController.m in Sources */,
+				2EEC541B1DD59A50005D988D /* ModelatorProperty.m in Sources */,
+				2EEC54211DD5A0A8005D988D /* ImportViewController.m in Sources */,
+				2EC182A11DD8D4D70087593A /* ObjCClassParser.m in Sources */,
+				2EEC53FF1DD591B2005D988D /* main.m in Sources */,
+				2EEC53FC1DD591B2005D988D /* AppDelegate.m in Sources */,
+				2EC182B11DD98E310087593A /* PreviewView.m in Sources */,
+				2EEC54181DD59976005D988D /* ModelatorClass.m in Sources */,
+				2EC182AC1DD93C090087593A /* PropertyView.m in Sources */,
+				2E5AE3BF1DD77BBE006792E6 /* ModelatorModule.m in Sources */,
+				2EC182A41DD8F3640087593A /* ObjcPropertySettings.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2EEC54091DD591B2005D988D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		2EEC540A1DD591B2005D988D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		2EEC540C1DD591B2005D988D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 92JE4PEMRB;
+				INFOPLIST_FILE = Modelator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.OliveSoft.Modelator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2EEC540D1DD591B2005D988D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 92JE4PEMRB;
+				INFOPLIST_FILE = Modelator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.OliveSoft.Modelator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2EEC53F21DD591B2005D988D /* Build configuration list for PBXProject "Modelator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2EEC54091DD591B2005D988D /* Debug */,
+				2EEC540A1DD591B2005D988D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2EEC540B1DD591B2005D988D /* Build configuration list for PBXNativeTarget "Modelator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2EEC540C1DD591B2005D988D /* Debug */,
+				2EEC540D1DD591B2005D988D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2EEC53EF1DD591B2005D988D /* Project object */;
+}

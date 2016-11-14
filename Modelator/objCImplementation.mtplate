@@ -1,0 +1,12 @@
+//
+//  <#CLASS_NAME#>.h
+//  <#CLASS_NAME#>
+//
+//  Created by Modelator on <#NOW#>.
+//
+
+#import "<#CLASS_NAME#>.h"
+
+@implementation <#CLASS_NAME#>
+
+@end
