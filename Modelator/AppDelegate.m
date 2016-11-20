@@ -18,7 +18,6 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
     [[ModuleManager sharedManager] loadModules];
-    NSLog(@"%@",[NSString stringWithFormat:NSLocalizedString(@"%d People", nil), 3]);
 }
 
 

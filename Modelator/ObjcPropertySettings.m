@@ -13,5 +13,8 @@
 - (NSArray *)propertyTypes {
     return @[@"NSString",@"NSArray",@"NSNumber",@"BOOL"];
 }
++ (NSString *)stringRepresentation {
+    return @"nonatomic, strong";
+}
 
 @end

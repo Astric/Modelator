@@ -3,7 +3,7 @@
 		"objCHeader.mtplate",
 		"objCImplementation.mtplate",
 	],
-	"propertyFormat":"@proprety (*#PROPERTY_ATTRS#*) *#PROPERTY_TYPE#* *#PROPERTY_NAME#*",
+	"propertyFormat":"@proprety (<#PROPERTY_ATTRS#>) <#PROPERTY_TYPE#> <#PROPERTY_NAME#>",
     "name":"Objective-C",
     "parserClass":"ObjCClassParser",
     "propertySettingsClass":"ObjcPropertySettings",

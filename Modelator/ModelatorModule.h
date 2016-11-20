@@ -11,7 +11,7 @@
 @interface ModelatorModule : NSObject
 
 @property (nonatomic, strong) NSArray *templateFiles;
-@property (nonatomic, strong) NSArray *propertyFormat;
+@property (nonatomic, strong) NSString *propertyFormat;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) Class parserClass;
 @property (nonatomic, strong) Class propertySettingsClass;

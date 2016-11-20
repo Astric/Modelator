@@ -15,6 +15,7 @@
 #import "PropertyView.h"
 #import "PreviewView.h"
 #import <WebKit/WebKit.h>
+#import "ModelatorExporter.h"
 
 @interface ViewController()<NSOutlineViewDelegate, NSOutlineViewDataSource, ImportViewControllerDelegate, NSTableViewDelegate, NSTableViewDataSource, NSSplitViewDelegate>
 
@@ -25,6 +26,7 @@
 @property (nonatomic, weak) id importViewController;
 @property (nonatomic, strong) NSURL *selectedFileURL;
 @property (weak) IBOutlet NSSplitView *horizontalSplitView;
+@property (weak) PreviewView *previewView;
 
 @end
 
@@ -97,17 +99,27 @@
 - (void)loadPreviewView {
     NSArray *arr = nil;
     [[NSBundle mainBundle] loadNibNamed:@"PreviewView" owner:self topLevelObjects:&arr];
-    NSView *view = nil;
     for (id topLevelObject in arr) {
         if ([topLevelObject isKindOfClass:[NSView class]]) {
-            view = topLevelObject;
+            self.previewView = topLevelObject;
             break;
         }
     }
-    view.frame = self.previewContainerView.bounds;
-    view.autoresizingMask = NSViewMinXMargin | NSViewWidthSizable | NSViewMaxXMargin | NSViewMinYMargin | NSViewHeightSizable | NSViewMaxYMargin;
-    [self.previewContainerView addSubview:view];
+    self.previewView.frame = self.previewContainerView.bounds;
+    self.previewView.autoresizingMask = NSViewMinXMargin | NSViewWidthSizable | NSViewMaxXMargin | NSViewMinYMargin | NSViewHeightSizable | NSViewMaxYMargin;
+    [self.previewContainerView addSubview:self.previewView];
 
+}
+
+- (void)updateCodeForClass:(ModelatorClass *)mClass {
+    dispatch_queue_t searchdQueue = dispatch_queue_create("com.olivesoft.modelator", NULL);
+    dispatch_async(searchdQueue, ^{
+        ModelatorExporter *exporter = [[ModelatorExporter alloc] init];
+        NSString *text = [exporter codeFromClass:mClass module:[[ModuleManager sharedManager] selectedModule]][0];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.previewView.text = text;
+        });
+    });
 }
 #pragma mark - ImportViewControllerDelegate
 
@@ -150,6 +162,13 @@
 - (void)outlineViewSelectionDidChange:(NSNotification *)notification {
     id selectedItem = [_outlineView itemAtRow:[_outlineView selectedRow]];
     [self presentPropertyViewForItem:selectedItem];
+    if (selectedItem) {
+        if ([selectedItem isKindOfClass:[ModelatorClass class]]) {
+            [self updateCodeForClass:selectedItem] ;
+        } else {
+            
+        }
+    }
 }
 
 - (void)presentPropertyViewForItem:(id)item {

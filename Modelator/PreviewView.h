@@ -10,4 +10,6 @@
 
 @interface PreviewView : NSView
 
+@property (nonatomic, strong) NSString *text;
+
 @end

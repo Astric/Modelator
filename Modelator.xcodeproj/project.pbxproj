@@ -20,6 +20,7 @@
 		2EC182B31DD98E980087593A /* highlight in Resources */ = {isa = PBXBuildFile; fileRef = 2EC182B21DD98E980087593A /* highlight */; };
 		2EC182B61DD9A2F50087593A /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EC182B51DD9A2F50087593A /* WebKit.framework */; };
 		2EC182B91DD9AA0B0087593A /* ModelatorSplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC182B81DD9AA0B0087593A /* ModelatorSplitView.m */; };
+		2EEB00C61DE204F500E06C6E /* ModelatorExporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EEB00C51DE204F500E06C6E /* ModelatorExporter.m */; };
 		2EEC53FC1DD591B2005D988D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EEC53FB1DD591B2005D988D /* AppDelegate.m */; };
 		2EEC53FF1DD591B2005D988D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EEC53FE1DD591B2005D988D /* main.m */; };
 		2EEC54021DD591B2005D988D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EEC54011DD591B2005D988D /* ViewController.m */; };
@@ -56,6 +57,8 @@
 		2EC182B51DD9A2F50087593A /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		2EC182B71DD9AA0B0087593A /* ModelatorSplitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelatorSplitView.h; sourceTree = "<group>"; };
 		2EC182B81DD9AA0B0087593A /* ModelatorSplitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelatorSplitView.m; sourceTree = "<group>"; };
+		2EEB00C41DE204F500E06C6E /* ModelatorExporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelatorExporter.h; sourceTree = "<group>"; };
+		2EEB00C51DE204F500E06C6E /* ModelatorExporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelatorExporter.m; sourceTree = "<group>"; };
 		2EEC53F71DD591B2005D988D /* Modelator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Modelator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EEC53FA1DD591B2005D988D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2EEC53FB1DD591B2005D988D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -98,6 +101,8 @@
 			children = (
 				2E5AE3B71DD6FF28006792E6 /* ModuleManager.h */,
 				2E5AE3B81DD6FF28006792E6 /* ModuleManager.m */,
+				2EEB00C41DE204F500E06C6E /* ModelatorExporter.h */,
+				2EEB00C51DE204F500E06C6E /* ModelatorExporter.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -372,6 +377,7 @@
 				2EEC54181DD59976005D988D /* ModelatorClass.m in Sources */,
 				2EC182AC1DD93C090087593A /* PropertyView.m in Sources */,
 				2E5AE3BF1DD77BBE006792E6 /* ModelatorModule.m in Sources */,
+				2EEB00C61DE204F500E06C6E /* ModelatorExporter.m in Sources */,
 				2EC182A41DD8F3640087593A /* ObjcPropertySettings.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

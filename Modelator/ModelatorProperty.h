@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol ModelatorPropertyProtocol <NSObject>
+
++ (NSString *)stringRepresentation;
+
+@end
+
 @interface ModelatorProperty : NSObject
 
 @property (nonatomic, strong) NSString *propertyName;
