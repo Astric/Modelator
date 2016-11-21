@@ -11,7 +11,14 @@
 @implementation ObjcPropertySettings
 
 - (NSArray *)propertyTypes {
-    return @[@"NSString",@"NSArray",@"NSNumber",@"BOOL"];
+    return @[
+             @"NSString",
+             @"NSArray",
+             @"NSNumber",
+             @"BOOL",
+             @"CGFloat",
+             @"NSInteger"
+             ];
 }
 
 - (NSString *)stringRepresentationOfProperty:(ModelatorProperty *)property {

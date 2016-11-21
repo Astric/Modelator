@@ -16,7 +16,7 @@
                 <comboBox focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1zd-fa-8bd">
                     <rect key="frame" x="64" y="228" width="207" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" focusRingType="none" drawsBackground="YES" usesDataSource="YES" numberOfVisibleItems="5" id="TKD-nw-fdL">
+                    <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" focusRingType="none" usesDataSource="YES" numberOfVisibleItems="5" id="TKD-nw-fdL">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -46,7 +46,7 @@
                     </connections>
                 </button>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="frM-di-yZB">
-                    <rect key="frame" x="19" y="165" width="102" height="18"/>
+                    <rect key="frame" x="19" y="161" width="102" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="radio" title="weak" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="4oD-tY-tt7">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -57,7 +57,7 @@
                     </connections>
                 </button>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fbb-aJ-kMD">
-                    <rect key="frame" x="19" y="141" width="102" height="18"/>
+                    <rect key="frame" x="19" y="135" width="102" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="radio" title="copy" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="M0h-hU-8jK">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -68,7 +68,7 @@
                     </connections>
                 </button>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y2a-IK-gKX">
-                    <rect key="frame" x="169" y="193" width="63" height="18"/>
+                    <rect key="frame" x="195" y="191" width="63" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="check" title="atomic" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="KAY-Q8-kuV">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -79,7 +79,7 @@
                     </connections>
                 </button>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LX6-Ob-byC">
-                    <rect key="frame" x="169" y="162" width="75" height="18"/>
+                    <rect key="frame" x="195" y="160" width="75" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="check" title="readonly" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="A3f-BF-M1F">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>

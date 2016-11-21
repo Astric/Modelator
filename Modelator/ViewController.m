@@ -30,6 +30,7 @@
 @property (weak) IBOutlet NSView *topView;
 @property (weak) IBOutlet NSTextField *lblName;
 @property (weak) IBOutlet NSTextField *txtName;
+@property (weak) IBOutlet NSView *toolBarView;
 
 @end
 
@@ -48,6 +49,8 @@
     [self.containerView.layer setBackgroundColor:[[NSColor whiteColor] CGColor]];
     [self.topView setWantsLayer:YES];
     [self.topView.layer setBackgroundColor:[[NSColor whiteColor] CGColor]];
+    [self.toolBarView setWantsLayer:YES];
+    [self.toolBarView.layer setBackgroundColor:[[NSColor whiteColor] CGColor]];
 }
 
 - (void)openDocument:(id)sender {
