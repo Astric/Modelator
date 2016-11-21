@@ -29,8 +29,12 @@
     NSString *str = propName ;
     NSArray *arr = [str componentsSeparatedByString:@"_"];
     NSMutableString *result = [NSMutableString string];
-    for (NSString *s in arr) {
-        [result appendString:s];
+    for (NSInteger i = 0;i < [arr count]; i++) {
+        NSString *name = arr[i];
+        if (i) {
+            name = [name capitalizedString];
+        }
+        [result appendString:name];
     }
     [result replaceCharactersInRange:NSMakeRange(0, 1) withString:[[result substringWithRange:NSMakeRange(0, 1)] lowercaseString]];
     if ([dissalowedNames containsObject:result]) {
