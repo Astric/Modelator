@@ -11,13 +11,12 @@
 
 @interface ObjcPropertySettings : NSObject<ModelatorPropertyProtocol>
 
-@property (nonatomic, assign) BOOL nonAtomicProperty;
+@property (nonatomic, assign) BOOL atomicProperty;
 @property (nonatomic, assign) BOOL assignProperty;
 @property (nonatomic, assign) BOOL copyProperty;
 @property (nonatomic, assign) BOOL weakProperty;
 @property (nonatomic, assign) BOOL strongProperty;
 @property (nonatomic, assign) BOOL readOnlyProperty;
 @property (nonnull, strong, readonly) NSArray *propertyTypes;
-
 
 @end

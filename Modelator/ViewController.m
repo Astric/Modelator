@@ -17,7 +17,7 @@
 #import <WebKit/WebKit.h>
 #import "ModelatorExporter.h"
 
-@interface ViewController()<NSOutlineViewDelegate, NSOutlineViewDataSource, ImportViewControllerDelegate, NSTableViewDelegate, NSTableViewDataSource, NSSplitViewDelegate>
+@interface ViewController()<NSOutlineViewDelegate, NSOutlineViewDataSource, ImportViewControllerDelegate, NSTableViewDelegate, NSTableViewDataSource, NSSplitViewDelegate, NSTextViewDelegate>
 
 @property (weak) IBOutlet NSOutlineView *outlineView;
 @property (weak) IBOutlet NSView *containerView;
@@ -27,6 +27,9 @@
 @property (nonatomic, strong) NSURL *selectedFileURL;
 @property (weak) IBOutlet NSSplitView *horizontalSplitView;
 @property (weak) PreviewView *previewView;
+@property (weak) IBOutlet NSView *topView;
+@property (weak) IBOutlet NSTextField *lblName;
+@property (weak) IBOutlet NSTextField *txtName;
 
 @end
 
@@ -34,23 +37,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(propertySettingsChanged:) name:@"modelator.PropertyChangeNotification" object:nil];
 }
 
 - (void)viewWillAppear {
     [super viewWillAppear];
     [self.previewContainerView setWantsLayer:YES];
-    [self.previewContainerView.layer setBackgroundColor:[[NSColor colorWithRed:0.17 green:0.17 blue:0.17 alpha:1] CGColor]];
+    [self.previewContainerView.layer setBackgroundColor:[[NSColor colorWithRed:0.16 green:0.17 blue:0.20 alpha:1] CGColor]];
     [self.containerView setWantsLayer:YES];
-    [self.containerView.layer setBackgroundColor:[[NSColor whiteColor] CGColor]];    
-}
-
-- (void)setRepresentedObject:(id)representedObject {
-    [super setRepresentedObject:representedObject];
-    
-    // Update the view, if already loaded.
-
+    [self.containerView.layer setBackgroundColor:[[NSColor whiteColor] CGColor]];
+    [self.topView setWantsLayer:YES];
+    [self.topView.layer setBackgroundColor:[[NSColor whiteColor] CGColor]];
 }
 
 - (void)openDocument:(id)sender {
@@ -62,7 +59,6 @@
             [self performSegueWithIdentifier:@"ImporterSegue" sender:self];
         }
     }];
-
 }
 
 - (void)parseJson:(NSURL *)jsonURL {
@@ -87,6 +83,8 @@
 }
 
 - (void)displayConversionResults {
+    [[self.containerView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+
     [self.outlineView reloadData];
 }
 - (void)prepareForSegue:(NSStoryboardSegue *)segue sender:(id)sender {
@@ -97,6 +95,7 @@
     
 }
 - (void)loadPreviewView {
+    [[self.previewContainerView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
     NSArray *arr = nil;
     [[NSBundle mainBundle] loadNibNamed:@"PreviewView" owner:self topLevelObjects:&arr];
     for (id topLevelObject in arr) {
@@ -161,12 +160,16 @@
 }
 - (void)outlineViewSelectionDidChange:(NSNotification *)notification {
     id selectedItem = [_outlineView itemAtRow:[_outlineView selectedRow]];
+    self.txtName.hidden = selectedItem == nil;
+    self.lblName.hidden = selectedItem == nil;
     [self presentPropertyViewForItem:selectedItem];
     if (selectedItem) {
         if ([selectedItem isKindOfClass:[ModelatorClass class]]) {
             [self updateCodeForClass:selectedItem] ;
+            self.txtName.stringValue = ((ModelatorClass *)selectedItem).name;
         } else {
-            
+            [self updateCodeForClass:[_outlineView parentForItem:selectedItem]];
+            self.txtName.stringValue = ((ModelatorProperty *)selectedItem).propertyName;
         }
     }
 }
@@ -193,8 +196,33 @@
         }
     }
 }
-#pragma mark - splitview delegate
+#pragma mark - TextView delegate
 //- (void)splitViewWillResizeSubviews:(NSNotification *)notification {
 //    [self.horizontalSplitView adjustSubviews];
 //}
+- (void)controlTextDidChange:(NSNotification *)obj {
+    id selectedItem = [_outlineView itemAtRow:[_outlineView selectedRow]];
+    if (selectedItem) {
+        if ([selectedItem isKindOfClass:[ModelatorClass class]]) {
+            ((ModelatorClass *)selectedItem).name = self.txtName.stringValue;
+            [self updateCodeForClass:selectedItem] ;
+        } else {
+            ((ModelatorProperty *)selectedItem).propertyName = self.txtName.stringValue;
+            [self updateCodeForClass:[_outlineView parentForItem:selectedItem]];
+        }
+    }
+    [_outlineView reloadItem:selectedItem];
+}
+
+- (void)propertySettingsChanged:(NSNotification *)notification {
+    id selectedItem = [_outlineView itemAtRow:[_outlineView selectedRow]];
+    if (selectedItem) {
+        if ([selectedItem isKindOfClass:[ModelatorClass class]]) {
+            [self updateCodeForClass:selectedItem] ;
+        } else {
+            [self updateCodeForClass:[_outlineView parentForItem:selectedItem]];
+        }
+    }
+
+}
 @end

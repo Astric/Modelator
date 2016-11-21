@@ -87,15 +87,7 @@
 
 
 - (NSString *)prettyPropretyName:(NSString*)propName {
-    //NSArray *dissalowedNames = @[@"id",];
-    NSString *str = [propName lowercaseString];
-    NSArray *arr = [str componentsSeparatedByString:@"_"];
-    NSMutableString *result = [NSMutableString string];
-    for (NSString *s in arr) {
-        [result appendString:[s capitalizedString]];
-    }
-    [result replaceCharactersInRange:NSMakeRange(0, 1) withString:[[result substringWithRange:NSMakeRange(0, 1)] lowercaseString]];
-    return result;
+    return nil;
 }
 
 

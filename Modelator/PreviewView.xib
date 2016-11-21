@@ -14,10 +14,10 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <webView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sQM-w7-wHl">
+                <webView fixedFrame="YES" maintainsBackForwardList="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQM-w7-wHl">
                     <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <webPreferences key="preferences" defaultFontSize="16" defaultFixedFontSize="13" minimumFontSize="0">
+                    <webPreferences key="preferences" defaultFontSize="16" defaultFixedFontSize="13" minimumFontSize="0" plugInsEnabled="NO" javaEnabled="NO" javaScriptCanOpenWindowsAutomatically="NO">
                         <nil key="identifier"/>
                     </webPreferences>
                 </webView>

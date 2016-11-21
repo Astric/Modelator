@@ -17,7 +17,7 @@
 @property (weak) IBOutlet NSButton *radioWeak;
 @property (weak) IBOutlet NSButton *checkNonatomic;
 @property (weak) IBOutlet NSButton *checkReadonly;
-@property (weak) IBOutlet NSButton *checkCopy;
+@property (weak) IBOutlet NSButton *radioCopy;
 
 @end
 
@@ -34,27 +34,36 @@
     return settings;
 }
 
-- (IBAction)nonAtomicClicked:(id)sender {
-    [self settings].nonAtomicProperty = self.checkNonatomic.state;
+- (IBAction)atomicClicked:(id)sender {
+    [self settings].atomicProperty = self.checkNonatomic.state;
+    [self somethingChanged];
 }
 
 - (IBAction)readOnlyClicked:(id)sender {
     [self settings].readOnlyProperty = self.checkReadonly.state;
+    [self somethingChanged];
 }
 
-- (IBAction)copyClicked:(id)sender {
-    [self settings].copyProperty = self.checkCopy.state;
-}
-
-- (IBAction)strongWeakClicked:(id)sender {
+- (IBAction)radioClicked:(id)sender {
     [self settings].weakProperty = self.radioWeak.state;
+    [self settings].strongProperty = self.radioStrong.state;
+    [self settings].copyProperty = self.radioCopy.state;
+    [self somethingChanged];
 }
+
+- (IBAction)somethingChanged {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"modelator.PropertyChangeNotification" object:nil];
+}
+
 - (void)associatedPropertyChanged {
     ModelatorProperty *prop = (ModelatorProperty *)self.assocciatedProperty;
     ObjcPropertySettings *settings = (ObjcPropertySettings *)prop.propertySettings;
     
-    self.checkCopy.state = settings.copyProperty;
-    self.checkNonatomic.state = settings.nonAtomicProperty;
+    self.radioCopy.state = settings.copyProperty;
+    self.radioWeak.state = settings.weakProperty;
+    self.radioStrong.state = settings.strongProperty;
+    
+    self.checkNonatomic.state = settings.atomicProperty;
     self.checkReadonly.state = settings.readOnlyProperty;
     
     [self.cmbType reloadData];
@@ -68,9 +77,11 @@
 }
 - (void)comboBoxSelectionDidChange:(NSNotification *)notification {
     ((ModelatorProperty *)self.assocciatedProperty).propertyType = [self settings].propertyTypes[[self.cmbType indexOfSelectedItem]];
+    [self somethingChanged];
 }
 - (void)controlTextDidChange:(NSNotification *)obj {
     ((ModelatorProperty *)self.assocciatedProperty).propertyType = self.cmbType.stringValue;
+    [self somethingChanged];
 }
 //- (NSUInteger)comboBox:(NSComboBox *)comboBox indexOfItemWithStringValue:(NSString *)string {
 //    return [[self settings].propertyTypes indexOfObjectPassingTest:^BOOL(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {

@@ -24,5 +24,19 @@
     }
     return @"NSObject";
 }
+- (NSString *)prettyPropretyName:(NSString*)propName {
+    NSArray *dissalowedNames = @[@"id",@"self",@"class"];
+    NSString *str = propName ;
+    NSArray *arr = [str componentsSeparatedByString:@"_"];
+    NSMutableString *result = [NSMutableString string];
+    for (NSString *s in arr) {
+        [result appendString:s];
+    }
+    [result replaceCharactersInRange:NSMakeRange(0, 1) withString:[[result substringWithRange:NSMakeRange(0, 1)] lowercaseString]];
+    if ([dissalowedNames containsObject:result]) {
+        [result appendString:@"_"];
+    }
+    return result;
+}
 
 @end

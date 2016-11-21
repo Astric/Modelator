@@ -8,9 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+@class ModelatorProperty;
+
 @protocol ModelatorPropertyProtocol <NSObject>
 
-+ (NSString *)stringRepresentation;
+- (NSString *)stringRepresentationOfProperty:(ModelatorProperty *)property;
+
+@optional
+
+- (NSString *)extrasOfProperty:(ModelatorProperty *)property;
 
 @end
 

@@ -1,14 +1,11 @@
 //
 //  <#CLASS_NAME#>.h
-//  <#CLASS_NAME#>
 //
 //  Created by Modelator on <#NOW#>.
-//
 
 #import <Foundation/Foundation.h>
 
 @interface <#CLASS_NAME#> : NSObject
 
 <#CLASS_PROPERTIES#>
-
 @end

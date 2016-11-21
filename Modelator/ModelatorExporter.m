@@ -54,10 +54,12 @@
     for (ModelatorProperty *prop in mClass.properties) {
         //[str appendFormat:@"%@\n",module.propertyFormat];
         NSString *propertyStr = module.propertyFormat;
-        NSString *propertySettingsStr = [module.propertySettingsClass stringRepresentation];
+        NSString *propertySettingsStr = [(id<ModelatorPropertyProtocol>)prop.propertySettings stringRepresentationOfProperty:prop];
+        NSString *propertyExtrasStr = [(id<ModelatorPropertyProtocol>)prop.propertySettings extrasOfProperty:prop];
         propertyStr = [propertyStr stringByReplacingOccurrencesOfString:@"<#PROPERTY_ATTRS#>" withString:propertySettingsStr];
         propertyStr = [propertyStr stringByReplacingOccurrencesOfString:@"<#PROPERTY_TYPE#>" withString:prop.propertyType];
         propertyStr = [propertyStr stringByReplacingOccurrencesOfString:@"<#PROPERTY_NAME#>" withString:prop.propertyName];
+        propertyStr = [propertyStr stringByReplacingOccurrencesOfString:@"<#PROPERTY_EXTRAS#>" withString:propertyExtrasStr];
         [str appendFormat:@"%@\n",propertyStr];
     }
     return str;
