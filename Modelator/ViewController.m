@@ -32,9 +32,9 @@
 @property (weak) IBOutlet NSTextField *txtName;
 @property (weak) IBOutlet NSView *toolBarView;
 @property (weak) IBOutlet NSTextField *lblSelect;
-@property (weak) IBOutlet NSTableHeaderView *headerView;
 @property (weak) IBOutlet NSView *tabContainerView;
 @property (strong) IBOutlet NSMenu *popup;
+@property (weak) IBOutlet NSSegmentedControl *segmentedControl;
 
 @end
 
@@ -43,6 +43,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(propertySettingsChanged:) name:@"modelator.PropertyChangeNotification" object:nil];
+    self.segmentedControl.hidden = YES;
 }
 
 - (void)viewWillAppear {
@@ -59,11 +60,25 @@
     [self.outlineView.tableColumns[0].headerCell setAttributedStringValue:str];
     [self.tabContainerView setWantsLayer:YES];
     [self.tabContainerView.layer setBackgroundColor:[[NSColor whiteColor] CGColor]];
+//    [self.segmentedControl setFont:[NSFont fontWithName:@"Ubuntu" size:11]];
+//    [self.segmentedControl setSelectedSegmentBezelColor:[NSColor redColor]];
 }
 - (IBAction)menuButtonClicked:(id)sender {
         [self.popup popUpMenuPositioningItem:self.popup.itemArray[0] atLocation:NSMakePoint(0, 0) inView:self.toolBarView];
 }
-
+- (IBAction)segmentClicked:(id)sender {
+    [self updateCode];
+}
+- (void)updateCode {
+    id selectedItem = [_outlineView itemAtRow:[_outlineView selectedRow]];
+    if (selectedItem) {
+        if ([selectedItem isKindOfClass:[ModelatorClass class]]) {
+            [self updateCodeForClass:selectedItem] ;
+        } else {
+            [self updateCodeForClass:[_outlineView parentForItem:selectedItem]];
+        }
+    }
+}
 - (void)openDocument:(id)sender {
     NSOpenPanel *panel = [NSOpenPanel openPanel];
     [panel beginSheetModalForWindow:[NSApp mainWindow] completionHandler:^(NSInteger result) {
@@ -125,13 +140,24 @@
     self.previewView.frame = self.previewContainerView.bounds;
     self.previewView.autoresizingMask = NSViewMinXMargin | NSViewWidthSizable | NSViewMaxXMargin | NSViewMinYMargin | NSViewHeightSizable | NSViewMaxYMargin;
     [self.previewContainerView addSubview:self.previewView];
+    [self loadPreviewSegments];
+}
+
+- (void)loadPreviewSegments {
+    ModelatorModule *module = [[ModuleManager sharedManager] selectedModule];
+    [self.segmentedControl setSegmentCount:[module.templateFiles count]];
+    for (NSInteger i = 0;i < [module.moduleTitles count];i++) {
+        NSString *str = module.moduleTitles[i];
+        [self.segmentedControl setLabel:str forSegment:i];
+    }
+    self.segmentedControl.hidden = NO;
 }
 
 - (void)updateCodeForClass:(ModelatorClass *)mClass {
     dispatch_queue_t searchdQueue = dispatch_queue_create("com.olivesoft.modelator", NULL);
     dispatch_async(searchdQueue, ^{
         ModelatorExporter *exporter = [[ModelatorExporter alloc] init];
-        NSString *text = [exporter codeFromClass:mClass module:[[ModuleManager sharedManager] selectedModule]][0];
+        NSString *text = [exporter codeFromClass:mClass module:[[ModuleManager sharedManager] selectedModule]][self.segmentedControl.selectedSegment];
         dispatch_async(dispatch_get_main_queue(), ^{
             self.previewView.text = text;
         });
@@ -188,6 +214,8 @@
             [self updateCodeForClass:[_outlineView parentForItem:selectedItem]];
             self.txtName.stringValue = ((ModelatorProperty *)selectedItem).propertyName;
         }
+    } else {
+        self.previewView.text = @"";
     }
 }
 
@@ -235,14 +263,7 @@
 }
 
 - (void)propertySettingsChanged:(NSNotification *)notification {
-    id selectedItem = [_outlineView itemAtRow:[_outlineView selectedRow]];
-    if (selectedItem) {
-        if ([selectedItem isKindOfClass:[ModelatorClass class]]) {
-            [self updateCodeForClass:selectedItem] ;
-        } else {
-            [self updateCodeForClass:[_outlineView parentForItem:selectedItem]];
-        }
-    }
+    [self updateCode];
 
 }
 @end

@@ -20,12 +20,6 @@
     return sharedManager;
 }
 
-- (instancetype)init {
-    if (self = [super init]) {
-        
-    }
-    return self;
-}
 - (void)loadModules {
     NSString *path = [[NSBundle mainBundle] pathForResource:@"objC" ofType:@"json"];
     NSData *data = [[NSData alloc] initWithContentsOfFile:path];
@@ -33,6 +27,7 @@
     ModelatorModule *module = [ModelatorModule new];
     module.propertyFormat = json[@"propertyFormat"];
     module.templateFiles = json[@"temlpateFiles"];
+    module.moduleTitles = json[@"temlpateTitles"];
     module.name = json[@"name"];
     module.parserClass = NSClassFromString(json[@"parserClass"]);
     module.propertySettingsClass = NSClassFromString(json[@"propertySettingsClass"]);
