@@ -20,7 +20,7 @@
     
     [self.webView setDrawsBackground:NO];
     NSString *url = [@"file://" stringByAppendingString:[[[NSBundle mainBundle] resourcePath] stringByAppendingString:@"/highlight/"]];
-    NSString *html = [NSString stringWithFormat:@"<body style='margin:0'><link rel='stylesheet' href='%@styles/atom-one-dark.css'><script src='%@highlight.pack.js'></script><script>hljs.initHighlightingOnLoad();</script><script>function setCodeText(txt) { document.getElementById('code').textContent = txt;hljs.highlightBlock(code) }</script><pre><code style='font-family: Menlo;font-size: 11px;' class='objectivec' id='code'></code></pre></body>",url,url];
+    NSString *html = [NSString stringWithFormat:@"<body style='margin:0'><link rel='stylesheet' href='%@styles/atom-one-dark.css'><script src='%@highlight.pack.js'></script><script>hljs.initHighlightingOnLoad();</script><script>function setCodeText(txt) { document.getElementById('code').textContent = txt;hljs.highlightBlock(code) }</script><pre><code style='font-family: Ubuntu Mono;font-size: 12px;' class='objectivec' id='code'></code></pre></body>",url,url];
     [[self.webView mainFrame] loadHTMLString:html baseURL:nil];
 }
 

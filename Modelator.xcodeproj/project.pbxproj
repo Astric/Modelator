@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E0F5BC81DE442760052228B /* UbuntuMono-B.ttf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2E0F5BC61DE442760052228B /* UbuntuMono-B.ttf */; };
+		2E0F5BC91DE442760052228B /* UbuntuMono-R.ttf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2E0F5BC71DE442760052228B /* UbuntuMono-R.ttf */; };
 		2E5AE3B91DD6FF28006792E6 /* ModuleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E5AE3B81DD6FF28006792E6 /* ModuleManager.m */; };
 		2E5AE3BB1DD77B5B006792E6 /* objC.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E5AE3BA1DD77B5B006792E6 /* objC.json */; };
 		2E5AE3BF1DD77BBE006792E6 /* ModelatorModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E5AE3BE1DD77BBE006792E6 /* ModelatorModule.m */; };
@@ -35,7 +37,23 @@
 		A1272DAC1829F573C78BDD46 /* libPods-Modelator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E55D6E34603C4A3E164407C7 /* libPods-Modelator.a */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		2E0F5BC51DE4420C0052228B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Fonts;
+			dstSubfolderSpec = 7;
+			files = (
+				2E0F5BC81DE442760052228B /* UbuntuMono-B.ttf in CopyFiles */,
+				2E0F5BC91DE442760052228B /* UbuntuMono-R.ttf in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		2E0F5BC61DE442760052228B /* UbuntuMono-B.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UbuntuMono-B.ttf"; sourceTree = "<group>"; };
+		2E0F5BC71DE442760052228B /* UbuntuMono-R.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UbuntuMono-R.ttf"; sourceTree = "<group>"; };
 		2E5AE3B71DD6FF28006792E6 /* ModuleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleManager.h; sourceTree = "<group>"; };
 		2E5AE3B81DD6FF28006792E6 /* ModuleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModuleManager.m; sourceTree = "<group>"; };
 		2E5AE3BA1DD77B5B006792E6 /* objC.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = objC.json; sourceTree = "<group>"; };
@@ -119,6 +137,8 @@
 		2EEC53EE1DD591B2005D988D = {
 			isa = PBXGroup;
 			children = (
+				2E0F5BC61DE442760052228B /* UbuntuMono-B.ttf */,
+				2E0F5BC71DE442760052228B /* UbuntuMono-R.ttf */,
 				2EEC53F91DD591B2005D988D /* Modelator */,
 				2EEC53F81DD591B2005D988D /* Products */,
 				2EC182B41DD9A2F50087593A /* Frameworks */,
@@ -248,6 +268,7 @@
 				2EEC53F51DD591B2005D988D /* Resources */,
 				A8789A8ABA95530C763CC4F0 /* [CP] Embed Pods Frameworks */,
 				656C03A41F66832851430918 /* [CP] Copy Pods Resources */,
+				2E0F5BC51DE4420C0052228B /* CopyFiles */,
 			);
 			buildRules = (
 			);

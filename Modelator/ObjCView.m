@@ -26,6 +26,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     ((NSTextField *)self.cmbType).delegate = self;
+    self.cmbType.numberOfVisibleItems = 10;
 }
 
 - (ObjcPropertySettings *)settings {

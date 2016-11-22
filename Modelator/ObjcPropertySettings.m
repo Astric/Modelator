@@ -14,6 +14,7 @@
     return @[
              @"NSString",
              @"NSArray",
+             @"NSDictionary",
              @"NSNumber",
              @"BOOL",
              @"CGFloat",
@@ -59,7 +60,7 @@
 }
 
 - (BOOL)propertyIsObject:(ModelatorProperty *)property {
-    NSArray *objects = @[@"NSString",@"NSArray",@"NSNumber"];
+    NSArray *objects = @[@"NSString",@"NSArray",@"NSNumber",@"NSDictionary"];
     return [objects containsObject:property.propertyType];
 }
 

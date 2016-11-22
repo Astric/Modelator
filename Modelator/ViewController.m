@@ -32,6 +32,7 @@
 @property (weak) IBOutlet NSTextField *txtName;
 @property (weak) IBOutlet NSView *toolBarView;
 @property (weak) IBOutlet NSTextField *lblSelect;
+@property (weak) IBOutlet NSTableHeaderView *headerView;
 
 @end
 
@@ -52,6 +53,8 @@
     [self.topView.layer setBackgroundColor:[[NSColor whiteColor] CGColor]];
     [self.toolBarView setWantsLayer:YES];
     [self.toolBarView.layer setBackgroundColor:[[NSColor whiteColor] CGColor]];
+    NSAttributedString *str = [[NSAttributedString alloc] initWithString:@"Classes" attributes:@{ NSFontAttributeName:[NSFont fontWithName:@"Ubuntu" size:11] }];
+    [self.outlineView.tableColumns[0].headerCell setAttributedStringValue:str];
 }
 
 - (void)openDocument:(id)sender {
