@@ -11,26 +11,6 @@
 
 @implementation ModelatorExporter
 
-+ (NSArray *)classTokens
-{
-    static NSArray *_classTokens;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        _classTokens = @[@"<#CLASS_NAME#>",@"<#NOW#>",@"<#CLASS_PROPERTIES#>"];
-    });
-    return _classTokens;
-}
-
-+ (NSArray *)propertyTokens
-{
-    static NSArray *_propertyTokens;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        _propertyTokens = @[@"<#PROPERTY_ATTRS#>",@"<#PROPERTY_TYPE#>",@"<#PROPERTY_NAME#>"];
-    });
-    return _propertyTokens;
-}
-
 - (id)codeFromClass:(ModelatorClass *)mClass module:(ModelatorModule *)module {
     NSMutableArray *arr = [NSMutableArray array];
     NSString *propertiesStr = [self propertiesFromClass:mClass module:module];

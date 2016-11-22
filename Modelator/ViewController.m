@@ -33,6 +33,8 @@
 @property (weak) IBOutlet NSView *toolBarView;
 @property (weak) IBOutlet NSTextField *lblSelect;
 @property (weak) IBOutlet NSTableHeaderView *headerView;
+@property (weak) IBOutlet NSView *tabContainerView;
+@property (strong) IBOutlet NSMenu *popup;
 
 @end
 
@@ -55,6 +57,11 @@
     [self.toolBarView.layer setBackgroundColor:[[NSColor whiteColor] CGColor]];
     NSAttributedString *str = [[NSAttributedString alloc] initWithString:@"Classes" attributes:@{ NSFontAttributeName:[NSFont fontWithName:@"Ubuntu" size:11] }];
     [self.outlineView.tableColumns[0].headerCell setAttributedStringValue:str];
+    [self.tabContainerView setWantsLayer:YES];
+    [self.tabContainerView.layer setBackgroundColor:[[NSColor whiteColor] CGColor]];
+}
+- (IBAction)menuButtonClicked:(id)sender {
+        [self.popup popUpMenuPositioningItem:self.popup.itemArray[0] atLocation:NSMakePoint(0, 0) inView:self.toolBarView];
 }
 
 - (void)openDocument:(id)sender {
@@ -106,12 +113,7 @@
     
 }
 - (void)loadPreviewView {
-    for (NSView *v in [self.containerView subviews]) {
-        if (![v isKindOfClass:[NSTextField class]]) {
-            [v removeFromSuperview];
-        }
-    }
-    self.lblSelect.hidden = NO;
+    [[self.previewContainerView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
     NSArray *arr = nil;
     [[NSBundle mainBundle] loadNibNamed:@"PreviewView" owner:self topLevelObjects:&arr];
     for (id topLevelObject in arr) {

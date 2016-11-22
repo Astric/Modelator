@@ -266,6 +266,9 @@
                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                             <font key="font" metaFont="system"/>
                                                         </buttonCell>
+                                                        <connections>
+                                                            <action selector="menuButtonClicked:" target="XfG-lQ-9wD" id="dp3-9a-k9E"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </customView>
@@ -329,6 +332,29 @@
                                     <customView id="xjH-uG-Zr1">
                                         <rect key="frame" x="531.5" y="0.0" width="378.5" height="440"/>
                                         <autoresizingMask key="autoresizingMask"/>
+                                        <subviews>
+                                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KBD-zk-jRL">
+                                                <rect key="frame" x="0.0" y="412" width="379" height="28"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                <subviews>
+                                                    <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uuC-2c-wPf">
+                                                        <rect key="frame" x="112" y="4" width="156" height="19"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                        <segmentedCell key="cell" controlSize="small" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="selectOne" id="CFk-nc-MP7">
+                                                            <font key="font" metaFont="smallSystem"/>
+                                                            <segments>
+                                                                <segment label="Header" selected="YES"/>
+                                                                <segment label="Implementation" tag="1"/>
+                                                            </segments>
+                                                        </segmentedCell>
+                                                    </segmentedControl>
+                                                </subviews>
+                                            </customView>
+                                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zQZ-gQ-8rC">
+                                                <rect key="frame" x="0.0" y="0.0" width="379" height="404"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </customView>
+                                        </subviews>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="CQi-2y-Zgp"/>
                                         </constraints>
@@ -354,7 +380,9 @@
                         <outlet property="lblName" destination="oWy-ge-gHQ" id="CUP-Sa-GsG"/>
                         <outlet property="lblSelect" destination="mKf-0c-Mem" id="DGg-xg-ZSQ"/>
                         <outlet property="outlineView" destination="r3Y-3R-oor" id="eAV-9s-vuV"/>
-                        <outlet property="previewContainerView" destination="xjH-uG-Zr1" id="Try-3w-bI4"/>
+                        <outlet property="popup" destination="qnG-hh-aya" id="Hd6-aQ-8wc"/>
+                        <outlet property="previewContainerView" destination="zQZ-gQ-8rC" id="8Mh-6S-aEC"/>
+                        <outlet property="tabContainerView" destination="KBD-zk-jRL" id="kN7-aM-ICO"/>
                         <outlet property="toolBarView" destination="uqT-r4-zln" id="RaH-Zj-xUf"/>
                         <outlet property="topView" destination="EEe-pl-YC2" id="Ujb-Op-xzS"/>
                         <outlet property="txtName" destination="52m-4d-Ldi" id="LRE-GI-UgI"/>
@@ -362,8 +390,21 @@
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <menu id="qnG-hh-aya">
+                    <items>
+                        <menuItem title="Export all" id="4uu-7K-5aC">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                        </menuItem>
+                        <menuItem title="Export selected" id="sin-Zo-p1b">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                        </menuItem>
+                        <menuItem title="Reload" id="5ni-hQ-7UJ">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                        </menuItem>
+                    </items>
+                </menu>
             </objects>
-            <point key="canvasLocation" x="1" y="977"/>
+            <point key="canvasLocation" x="-295" y="891"/>
         </scene>
         <!--Import-->
         <scene sceneID="XdN-wt-MgQ">
