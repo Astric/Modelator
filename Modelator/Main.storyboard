@@ -318,6 +318,17 @@
                                                             <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1SR-VN-MU8">
                                                                 <rect key="frame" x="0.0" y="0.0" width="460" height="372"/>
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                <subviews>
+                                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mKf-0c-Mem">
+                                                                        <rect key="frame" x="83" y="177" width="294" height="17"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Select a property from the list to display it's attributes" id="vs4-HG-vEV">
+                                                                            <font key="font" metaFont="smallSystem"/>
+                                                                            <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                        </textFieldCell>
+                                                                    </textField>
+                                                                </subviews>
                                                             </customView>
                                                         </subviews>
                                                         <constraints>
@@ -367,6 +378,7 @@
                         <outlet property="containerView" destination="1SR-VN-MU8" id="8B9-ds-t1y"/>
                         <outlet property="horizontalSplitView" destination="nCg-Ka-VMG" id="bFm-xV-unG"/>
                         <outlet property="lblName" destination="oWy-ge-gHQ" id="CUP-Sa-GsG"/>
+                        <outlet property="lblSelect" destination="mKf-0c-Mem" id="DGg-xg-ZSQ"/>
                         <outlet property="outlineView" destination="r3Y-3R-oor" id="eAV-9s-vuV"/>
                         <outlet property="previewContainerView" destination="O6N-Ih-KH7" id="6c6-kJ-hLn"/>
                         <outlet property="toolBarView" destination="uqT-r4-zln" id="RaH-Zj-xUf"/>

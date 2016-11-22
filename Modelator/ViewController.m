@@ -31,6 +31,7 @@
 @property (weak) IBOutlet NSTextField *lblName;
 @property (weak) IBOutlet NSTextField *txtName;
 @property (weak) IBOutlet NSView *toolBarView;
+@property (weak) IBOutlet NSTextField *lblSelect;
 
 @end
 
@@ -86,8 +87,12 @@
 }
 
 - (void)displayConversionResults {
-    [[self.containerView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
-
+    for (NSView *v in [self.containerView subviews]) {
+        if (![v isKindOfClass:[NSTextField class]]) {
+            [v removeFromSuperview];
+        }
+    }
+    self.lblSelect.hidden = NO;
     [self.outlineView reloadData];
 }
 - (void)prepareForSegue:(NSStoryboardSegue *)segue sender:(id)sender {
@@ -98,7 +103,12 @@
     
 }
 - (void)loadPreviewView {
-    [[self.previewContainerView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    for (NSView *v in [self.containerView subviews]) {
+        if (![v isKindOfClass:[NSTextField class]]) {
+            [v removeFromSuperview];
+        }
+    }
+    self.lblSelect.hidden = NO;
     NSArray *arr = nil;
     [[NSBundle mainBundle] loadNibNamed:@"PreviewView" owner:self topLevelObjects:&arr];
     for (id topLevelObject in arr) {
@@ -110,7 +120,6 @@
     self.previewView.frame = self.previewContainerView.bounds;
     self.previewView.autoresizingMask = NSViewMinXMargin | NSViewWidthSizable | NSViewMaxXMargin | NSViewMinYMargin | NSViewHeightSizable | NSViewMaxYMargin;
     [self.previewContainerView addSubview:self.previewView];
-
 }
 
 - (void)updateCodeForClass:(ModelatorClass *)mClass {
@@ -178,9 +187,15 @@
 }
 
 - (void)presentPropertyViewForItem:(id)item {
-    [[self.containerView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    for (NSView *v in [self.containerView subviews]) {
+        if (![v isKindOfClass:[NSTextField class]]) {
+            [v removeFromSuperview];
+        }
+    }
+    self.lblSelect.hidden = NO;
     if ([item isKindOfClass:[ModelatorProperty class]]) {
         NSString *viewClassName = [[[ModuleManager sharedManager] selectedModule] propertyViewClassName];
+        self.lblSelect.hidden = YES;
         NSArray *arr = nil;
         [[NSBundle mainBundle] loadNibNamed:viewClassName owner:self topLevelObjects:&arr];
         NSView *view = nil;
@@ -190,7 +205,6 @@
                 break;
             }
         }
-        
         if (view) {
             [(id)view setAssocciatedProperty:item];
             view.frame = self.containerView.bounds;
@@ -200,9 +214,7 @@
     }
 }
 #pragma mark - TextView delegate
-//- (void)splitViewWillResizeSubviews:(NSNotification *)notification {
-//    [self.horizontalSplitView adjustSubviews];
-//}
+
 - (void)controlTextDidChange:(NSNotification *)obj {
     id selectedItem = [_outlineView itemAtRow:[_outlineView selectedRow]];
     if (selectedItem) {
