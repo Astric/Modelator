@@ -13,7 +13,7 @@
 
 - (instancetype)initWithCoder:(NSCoder *)coder
 {
-    self = [super initWithCoder:coder];
+    self = [super init];
     if (self) {
 _LOOP_PROPERTY_BEGIN_        _<#PROPERTY_NAME#> = [coder decode<#PROPERTY_CONV_NAME#>ForKey:@"<#PROPERTY_NAME#>"];<#NEW_LINE#>_LOOP_PROPERTY_END_}
     return self;
@@ -22,6 +22,6 @@ _LOOP_PROPERTY_BEGIN_        _<#PROPERTY_NAME#> = [coder decode<#PROPERTY_CONV_N
 - (void)encodeWithCoder:(NSCoder *)coder
 {
     [super encodeWithCoder:coder];
-_LOOP_PROPERTY_BEGIN_    [aCoder encode<#PROPERTY_CONV_NAME#>:self.<#PROPERTY_NAME#> forKey:@"<#PROPERTY_NAME#>"];<#NEW_LINE#>_LOOP_PROPERTY_END_}
+_LOOP_PROPERTY_BEGIN_    [coder encode<#PROPERTY_CONV_NAME#>:self.<#PROPERTY_NAME#> forKey:@"<#PROPERTY_NAME#>"];<#NEW_LINE#>_LOOP_PROPERTY_END_}
 
 @end
