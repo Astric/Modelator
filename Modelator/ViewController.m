@@ -138,7 +138,7 @@
         }
     }
     self.previewView.frame = self.previewContainerView.bounds;
-    self.previewView.autoresizingMask = NSViewMinXMargin | NSViewWidthSizable | NSViewMaxXMargin | NSViewMinYMargin | NSViewHeightSizable | NSViewMaxYMargin;
+    self.previewView.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
     [self.previewContainerView addSubview:self.previewView];
     [self loadPreviewSegments];
 }

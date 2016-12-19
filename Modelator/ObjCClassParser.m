@@ -24,6 +24,7 @@
     }
     return @"NSObject";
 }
+
 - (NSString *)prettyPropretyName:(NSString*)propName {
     NSArray *dissalowedNames = @[@"id",@"self",@"class"];
     NSString *str = propName ;
@@ -43,4 +44,18 @@
     return result;
 }
 
+- (NSString *)obectClassToConvinentString:(id)obj {
+    if ([obj isKindOfClass:[NSNumber class]]) {
+        if ([obj isKindOfClass:[NSClassFromString(@"__NSCFBoolean") class]]) {
+            return @"Bool";
+        } else {
+            return @"Object";
+        }
+    } else if ([obj isKindOfClass:[NSString class]])  {
+        return @"Object";
+    } else if ([obj isKindOfClass:[NSArray class]])  {
+        return @"Object";
+    }
+    return @"Object";
+}
 @end

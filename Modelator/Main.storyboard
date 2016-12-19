@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -183,11 +183,11 @@
                                                 <rect key="frame" x="0.0" y="36" width="175" height="404"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <clipView key="contentView" ambiguous="YES" drawsBackground="NO" id="U0x-xy-GrK">
-                                                    <rect key="frame" x="0.0" y="0.0" width="175" height="404"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="175" height="389"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="zi9-P2-uJy" viewBased="YES" indentationPerLevel="16" outlineTableColumn="TnH-MG-vYZ" id="r3Y-3R-oor">
-                                                            <rect key="frame" x="0.0" y="0.0" width="246" height="381"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="246" height="366"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <size key="intercellSpacing" width="2" height="3"/>
                                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -243,11 +243,11 @@
                                                     <nil key="backgroundColor"/>
                                                 </clipView>
                                                 <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="FKb-jh-8Gl">
-                                                    <rect key="frame" x="0.0" y="-16" width="0.0" height="16"/>
+                                                    <rect key="frame" x="0.0" y="389" width="175" height="15"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </scroller>
                                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="2b5-8L-KFQ">
-                                                    <rect key="frame" x="-16" y="0.0" width="16" height="0.0"/>
+                                                    <rect key="frame" x="-15" y="8" width="15" height="0.0"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </scroller>
                                                 <tableHeaderView key="headerView" id="zi9-P2-uJy">
@@ -355,13 +355,16 @@
                                                     <constraint firstItem="uuC-2c-wPf" firstAttribute="centerX" secondItem="KBD-zk-jRL" secondAttribute="centerX" id="rms-dL-OBV"/>
                                                 </constraints>
                                             </customView>
-                                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zQZ-gQ-8rC">
+                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="zQZ-gQ-8rC">
                                                 <rect key="frame" x="0.0" y="0.0" width="379" height="404"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             </customView>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="zQZ-gQ-8rC" firstAttribute="top" secondItem="xjH-uG-Zr1" secondAttribute="top" constant="36" id="162-cR-zL7"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="CQi-2y-Zgp"/>
+                                            <constraint firstAttribute="bottom" secondItem="zQZ-gQ-8rC" secondAttribute="bottom" id="Ilj-F7-kzq"/>
+                                            <constraint firstItem="zQZ-gQ-8rC" firstAttribute="leading" secondItem="xjH-uG-Zr1" secondAttribute="leading" id="Pez-HA-nFa"/>
+                                            <constraint firstAttribute="trailing" secondItem="zQZ-gQ-8rC" secondAttribute="trailing" constant="-1" id="dIN-F4-JdE"/>
                                             <constraint firstItem="KBD-zk-jRL" firstAttribute="top" secondItem="xjH-uG-Zr1" secondAttribute="top" id="lGj-oa-yow"/>
                                             <constraint firstItem="KBD-zk-jRL" firstAttribute="width" secondItem="xjH-uG-Zr1" secondAttribute="width" id="ly4-u6-jxs"/>
                                             <constraint firstItem="KBD-zk-jRL" firstAttribute="leading" secondItem="xjH-uG-Zr1" secondAttribute="leading" id="n2x-bH-Hh0"/>

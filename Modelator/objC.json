@@ -7,7 +7,6 @@
          "Header",
          "Implementation",
      ],
-	"propertyFormat":"@property (<#PROPERTY_ATTRS#>) <#PROPERTY_TYPE#> <#PROPERTY_EXTRAS#><#PROPERTY_NAME#>;",
     "name":"Objective-C",
     "parserClass":"ObjCClassParser",
     "propertySettingsClass":"ObjcPropertySettings",

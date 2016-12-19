@@ -70,7 +70,7 @@
         } else if ([rootObject[obj] isKindOfClass:[NSDictionary class]]) {
             [self generateClassWithRoodObject:rootObject[obj] classArray:classArray className:obj];
         } else {
-            ModelatorProperty *prop = [ModelatorProperty propertyWithName:[self prettyPropretyName:obj] type:[self objectClassToString:rootObject[obj]]];
+            ModelatorProperty *prop = [ModelatorProperty propertyWithName:[self prettyPropretyName:obj] type:[self objectClassToString:rootObject[obj]] ];
             Class aClass = [[ModuleManager sharedManager] selectedModule].propertySettingsClass;
             id settings = [[aClass alloc] init];
             prop.propertySettings = settings;
@@ -90,5 +90,8 @@
     return nil;
 }
 
+- (NSString *)obectClassToConvinentString:(id)obj {
+    return nil;
+}
 
 @end

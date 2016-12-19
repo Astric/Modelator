@@ -17,6 +17,7 @@
 @optional
 
 - (NSString *)extrasOfProperty:(ModelatorProperty *)property;
+- (NSString *)convinientNameOfProperty:(ModelatorProperty *)property;
 
 @end
 

@@ -5,6 +5,23 @@
 
 #import "<#CLASS_NAME#>.h"
 
+@interface <#CLASS_NAME#> ()<NSCoding>
+
+@end
+
 @implementation <#CLASS_NAME#>
+
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+_LOOP_PROPERTY_BEGIN_        _<#PROPERTY_NAME#> = [coder decode<#PROPERTY_CONV_NAME#>ForKey:@"<#PROPERTY_NAME#>"];<#NEW_LINE#>_LOOP_PROPERTY_END_}
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)coder
+{
+    [super encodeWithCoder:coder];
+_LOOP_PROPERTY_BEGIN_    [aCoder encode<#PROPERTY_CONV_NAME#>:self.<#PROPERTY_NAME#> forKey:@"<#PROPERTY_NAME#>"];<#NEW_LINE#>_LOOP_PROPERTY_END_}
 
 @end
