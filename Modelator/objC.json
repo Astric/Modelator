@@ -7,6 +7,10 @@
          "Header",
          "Implementation",
      ],
+    "exportFileExtensions":[
+         ".h",
+         ".m",
+    ],
     "name":"Objective-C",
     "parserClass":"ObjCClassParser",
     "propertySettingsClass":"ObjcPropertySettings",

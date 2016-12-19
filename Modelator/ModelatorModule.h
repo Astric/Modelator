@@ -17,5 +17,6 @@
 @property (nonatomic, strong) Class parserClass;
 @property (nonatomic, strong) Class propertySettingsClass;
 @property (nonatomic, strong) NSString *propertyViewClassName;
+@property (nonatomic, strong) NSArray *exportFileExtensions;
 
 @end

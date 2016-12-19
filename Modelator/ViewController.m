@@ -266,4 +266,37 @@
     [self updateCode];
 
 }
+
+-(BOOL)validateMenuItem:(NSMenuItem *)menuItem {
+    if (menuItem.tag  == 10) {
+        return self.classParser != nil;
+    }
+    return YES;
+}
+- (void)saveAllDocuments:(id)sender {
+    NSOpenPanel *panel = [NSOpenPanel openPanel];
+    panel.canChooseDirectories = YES;
+    panel.canChooseFiles = NO;
+    [panel beginSheetModalForWindow:[NSApp mainWindow] completionHandler:^(NSInteger result) {
+        if (result == NSModalResponseOK) {
+            
+            for (ModelatorClass *mClass in self.classParser.classes) {
+                ModelatorExporter *exporter = [[ModelatorExporter alloc] init];
+                ModelatorModule *module = [[ModuleManager sharedManager] selectedModule];
+                for (NSInteger i = 0;i < [[module exportFileExtensions] count];i++) {
+
+                    NSArray *arr = [exporter codeFromClass:mClass module:module];
+                    NSInteger k = 0;
+                    for (NSString *str in arr) {
+                        NSURL *selectedPath = [[panel URL] URLByAppendingPathComponent:[NSString stringWithFormat:@"%@%@",mClass.name,module.exportFileExtensions[k++]] isDirectory:NO];
+                        NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
+                        [data writeToURL:selectedPath atomically:YES];
+                    }
+                }
+            }
+            
+        }
+    }];
+}
+
 @end

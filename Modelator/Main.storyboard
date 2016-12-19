@@ -404,8 +404,11 @@
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <menu id="qnG-hh-aya">
                     <items>
-                        <menuItem title="Export all" id="4uu-7K-5aC">
+                        <menuItem title="Export all" tag="10" id="4uu-7K-5aC">
                             <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="saveAllDocuments:" target="rPt-NT-nkU" id="c6u-Qs-a00"/>
+                            </connections>
                         </menuItem>
                         <menuItem title="Export selected" id="sin-Zo-p1b">
                             <modifierMask key="keyEquivalentModifierMask"/>

@@ -18,4 +18,6 @@
 
 - (instancetype)initWithJSON:(id)json rootClassName:(NSString *)rootClassName;
 
+- (void)saveAllClassesToURL:(NSURL *)url;
+
 @end

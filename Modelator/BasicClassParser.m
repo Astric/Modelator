@@ -94,4 +94,10 @@
     return nil;
 }
 
+- (void)saveAllClassesToURL:(NSURL *)url {
+    for (ModelatorClass *cls in self.classes) {
+
+
+    }
+}
 @end

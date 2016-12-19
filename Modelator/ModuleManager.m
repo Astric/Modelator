@@ -28,6 +28,7 @@
     module.propertyFormat = json[@"propertyFormat"];
     module.templateFiles = json[@"temlpateFiles"];
     module.moduleTitles = json[@"temlpateTitles"];
+    module.exportFileExtensions = json[@"exportFileExtensions"];
     module.name = json[@"name"];
     module.parserClass = NSClassFromString(json[@"parserClass"]);
     module.propertySettingsClass = NSClassFromString(json[@"propertySettingsClass"]);
