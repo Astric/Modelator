@@ -26,7 +26,7 @@
 }
 
 - (NSString *)prettyPropretyName:(NSString*)propName {
-    NSArray *dissalowedNames = @[@"id",@"self",@"class"];
+    NSArray *dissalowedNames = @[@"id",@"self",@"class",@"virtual"];
     NSString *str = propName ;
     NSArray *arr = [str componentsSeparatedByString:@"_"];
     NSMutableString *result = [NSMutableString string];
@@ -41,6 +41,21 @@
     if ([dissalowedNames containsObject:result]) {
         [result appendString:@"_"];
     }
+    return result;
+}
+
+- (NSString *)prettyClassName:(NSString *)className {
+    NSArray *arr = [className componentsSeparatedByString:@"_"];
+    NSMutableString *result = [NSMutableString string];
+    for (NSInteger i = 0;i < [arr count]; i++) {
+        NSString *name = arr[i];
+        if (i) {
+            name = [name capitalizedString];
+        }
+        [result appendString:name];
+    }
+    [result replaceCharactersInRange:NSMakeRange(0, 1) withString:[[result substringWithRange:NSMakeRange(0, 1)] uppercaseString]];
+
     return result;
 }
 

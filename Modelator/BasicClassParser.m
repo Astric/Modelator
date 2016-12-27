@@ -14,6 +14,7 @@
 @interface BasicClassParser()
 
 @property (nonatomic, strong) id json;
+@property (nonatomic, strong) NSMutableArray *classArray;
 
 @end
 
@@ -22,69 +23,42 @@
 - (instancetype)initWithJSON:(id)json rootClassName:(NSString *)rootClassName {
     if (self = [super init]) {
         _json = json;
-        [self generateClassesWithRootClassName:rootClassName];
+        self.classArray = [NSMutableArray array];
+        [self grabClassesWithRootClassName:rootClassName source:_json];
+        [self.classes = self.classArray copy];
     }
     return self;
 }
 
-- (void)generateClassesWithRootClassName:(NSString *)rootClassName {
-    NSMutableArray *classArray = [NSMutableArray array];
-    NSDictionary *src = [self.json isKindOfClass:[NSDictionary class]]? self.json: [self.json firstObject];
-    [self generateClassWithRoodObject:src classArray:classArray className:rootClassName];
-    [self setClasses:classArray];
-}
-
-- (void)generateClassWithRoodObject:(id)rootObject classArray:(NSMutableArray *)classArray className:(NSString *)className {
-    NSMutableArray *propertyArray = [NSMutableArray array];
+- (void)grabClassesWithRootClassName:(NSString *)rootClassName source:(id)source {
     ModelatorClass *mClass = [ModelatorClass new];
-    mClass.name = [[className capitalizedString] singularizedString];
-    for (id obj in rootObject) {
-        if ([rootObject[obj] isKindOfClass:[NSArray class]]) {
-            BOOL containsObjects = NO;
-            for (id subObj in rootObject[obj]) {
-                if ([subObj isKindOfClass:[NSDictionary class]]) {
-                    containsObjects = YES;
-                    [self generateClassWithRoodObject:subObj classArray:classArray className:obj];
-                    break;
-                }
+    mClass.name = [[self prettyClassName:rootClassName] singularizedString];
+    NSMutableArray *propertyArray = [NSMutableArray array];
+    NSDictionary *src = [source isKindOfClass:[NSDictionary class]]? source: [source firstObject];
+    if ([src isKindOfClass:[NSArray class]] || [src isKindOfClass:[NSDictionary class]]) {
+        for (id obj in src) {
+            
+            ModelatorProperty *prop = [ModelatorProperty propertyWithName:[self prettyPropretyName:obj] type:[self objectClassToString:src[obj]]];
+            Class aClass = [[ModuleManager sharedManager] selectedModule].propertySettingsClass;
+            id settings = [[aClass alloc] init];
+            prop.propertySettings = settings;
+            [propertyArray addObject:prop];
+            
+            if ([src[obj] isKindOfClass:[NSArray class]] || [src[obj] isKindOfClass:[NSDictionary class]]) {
+                [self grabClassesWithRootClassName:obj source:src[obj]];
             }
-            ModelatorProperty *prop = [ModelatorProperty propertyWithName:[self prettyPropretyName:obj] type:[self objectClassToString:rootObject[obj]]];
-            Class aClass = [[ModuleManager sharedManager] selectedModule].propertySettingsClass;
-            id settings = [[aClass alloc] init];
-            prop.propertySettings = settings;
-            [propertyArray addObject:prop];
-//            if (!containsObjects) {
-//                ModelatorProperty *prop = [ModelatorProperty propertyWithName:[self prettyPropretyName:obj] type:[self objectClassToString:rootObject[obj]]];
-//                Class aClass = [[ModuleManager sharedManager] selectedModule].propertySettingsClass;
-//                id settings = [[aClass alloc] init];
-//                prop.propertySettings = settings;
-//                [propertyArray addObject:prop];
-//            } else {
-//                ModelatorProperty *prop = [ModelatorProperty propertyWithName:obj type:[self objectClassToString:rootObject[obj]]];
-//                Class aClass = [[ModuleManager sharedManager] selectedModule].propertySettingsClass;
-//                id settings = [[aClass alloc] init];
-//                prop.propertySettings = settings;
-//                [propertyArray addObject:prop];
-//
-//            }
-        } else if ([rootObject[obj] isKindOfClass:[NSDictionary class]]) {
-            [self generateClassWithRoodObject:rootObject[obj] classArray:classArray className:obj];
-        } else {
-            ModelatorProperty *prop = [ModelatorProperty propertyWithName:[self prettyPropretyName:obj] type:[self objectClassToString:rootObject[obj]] ];
-            Class aClass = [[ModuleManager sharedManager] selectedModule].propertySettingsClass;
-            id settings = [[aClass alloc] init];
-            prop.propertySettings = settings;
-            [propertyArray addObject:prop];
         }
+        mClass.properties = [propertyArray copy];
+        [self.classArray addObject:mClass];
     }
-    [classArray addObject:mClass];
-    mClass.properties = propertyArray;
 }
 
+- (NSString *)prettyClassName:(NSString *)className {
+    return nil;
+}
 - (NSString *)objectClassToString:(id)obj {
     return nil;
 }
-
 
 - (NSString *)prettyPropretyName:(NSString*)propName {
     return nil;
