@@ -15,12 +15,12 @@
         if ([obj isKindOfClass:[NSClassFromString(@"__NSCFBoolean") class]]) {
             return @"Bool";
         } else {
-            return @"NSNumber";
+            return @"Float";
         }
     } else if ([obj isKindOfClass:[NSString class]])  {
         return @"String";
     } else if ([obj isKindOfClass:[NSArray class]])  {
-        return @"[Any]";
+        return @"Array<Any>";
     }
     return @"NSObject";
 }

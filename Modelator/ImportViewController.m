@@ -24,7 +24,7 @@
     [self.popupLanguage addItemsWithTitles:[[ModuleManager sharedManager] moduleNames]];
     
     [self.popupProtocol removeAllItems];
-    [self.popupProtocol addItemsWithTitles:@[@"No protocol",@"JSON Schema draft 4"]];
+    [self.popupProtocol addItemsWithTitles:@[@"No protocol"]];
 
 }
 

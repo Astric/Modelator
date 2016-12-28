@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "ObjCClassParser.h"
 #import "ImportViewController.h"
 #import "ModuleManager.h"
 #import "ModelatorClass.h"
@@ -16,13 +15,14 @@
 #import "PreviewView.h"
 #import <WebKit/WebKit.h>
 #import "ModelatorExporter.h"
+#import "BasicClassParser.h"
 
 @interface ViewController()<NSOutlineViewDelegate, NSOutlineViewDataSource, ImportViewControllerDelegate, NSTableViewDelegate, NSTableViewDataSource, NSSplitViewDelegate, NSTextViewDelegate>
 
 @property (weak) IBOutlet NSOutlineView *outlineView;
 @property (weak) IBOutlet NSView *containerView;
 @property (weak) IBOutlet NSView *previewContainerView;
-@property (nonatomic, strong) ObjCClassParser *classParser;
+@property (nonatomic, strong) id classParser;
 @property (nonatomic, weak) id importViewController;
 @property (nonatomic, strong) NSURL *selectedFileURL;
 @property (weak) IBOutlet NSSplitView *horizontalSplitView;
@@ -99,7 +99,8 @@
         return;
     }
     NSString *rootClass = [[[jsonURL absoluteString] lastPathComponent] stringByDeletingPathExtension];
-    self.classParser = [[ObjCClassParser alloc] initWithJSON:json rootClassName:rootClass];
+    ModelatorModule *module = [[ModuleManager sharedManager] selectedModule];
+    self.classParser = [[module.parserClass alloc] initWithJSON:json rootClassName:rootClass];
     [self displayConversionResults];
     [self loadPreviewView];
 }
@@ -281,7 +282,7 @@
     [panel beginSheetModalForWindow:[NSApp mainWindow] completionHandler:^(NSInteger result) {
         if (result == NSModalResponseOK) {
             
-            for (ModelatorClass *mClass in self.classParser.classes) {
+            for (ModelatorClass *mClass in [self.classParser classes]) {
                 ModelatorExporter *exporter = [[ModelatorExporter alloc] init];
                 ModelatorModule *module = [[ModuleManager sharedManager] selectedModule];
                 for (NSInteger i = 0;i < [[module exportFileExtensions] count];i++) {

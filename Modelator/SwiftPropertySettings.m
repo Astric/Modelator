@@ -12,15 +12,11 @@
 
 - (NSArray *)propertyTypes {
     return @[
-             @"NSString",
-             @"NSArray",
-             @"NSDictionary",
-             @"NSNumber",
-             @"BOOL",
-             @"CGFloat",
-             @"NSInteger",
-             @"NSObject",
-             @"id"
+             @"String",
+             @"Array",
+             @"Dictionary",
+             @"Float",
+             @"Bool"
              ];
 }
 
@@ -67,7 +63,7 @@
 }
 
 - (NSString *)convinientNameOfProperty:(ModelatorProperty *)property {
-    if ([property.propertyType isEqualToString:@"BOOL"]) {
+    if ([property.propertyType isEqualToString:@"Bool"]) {
         return @"Bool";
     } else if ([property.propertyType isEqualToString:@"CGFloat"]) {
         return @"Float";
