@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E14EC951E13A09D005A2673 /* swift.mtplate in Resources */ = {isa = PBXBuildFile; fileRef = 2E14EC941E13A09D005A2673 /* swift.mtplate */; };
+		2E14EC971E13A114005A2673 /* swift.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E14EC961E13A114005A2673 /* swift.json */; };
+		2E14EC9A1E13A178005A2673 /* SwiftClassParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E14EC991E13A178005A2673 /* SwiftClassParser.m */; };
+		2E14EC9D1E13B1FD005A2673 /* SwiftPropertySettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E14EC9C1E13B1FD005A2673 /* SwiftPropertySettings.m */; };
+		2E14ECA11E13B2BB005A2673 /* SwiftView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E14EC9E1E13B2BB005A2673 /* SwiftView.xib */; };
+		2E14ECA21E13B2BB005A2673 /* SwiftView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E14ECA01E13B2BB005A2673 /* SwiftView.m */; };
 		2E5AE3B91DD6FF28006792E6 /* ModuleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E5AE3B81DD6FF28006792E6 /* ModuleManager.m */; };
 		2E5AE3BB1DD77B5B006792E6 /* objC.json in Resources */ = {isa = PBXBuildFile; fileRef = 2E5AE3BA1DD77B5B006792E6 /* objC.json */; };
 		2E5AE3BF1DD77BBE006792E6 /* ModelatorModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E5AE3BE1DD77BBE006792E6 /* ModelatorModule.m */; };
@@ -50,6 +56,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2E14EC941E13A09D005A2673 /* swift.mtplate */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = swift.mtplate; sourceTree = "<group>"; };
+		2E14EC961E13A114005A2673 /* swift.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = swift.json; sourceTree = "<group>"; };
+		2E14EC981E13A178005A2673 /* SwiftClassParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftClassParser.h; sourceTree = "<group>"; };
+		2E14EC991E13A178005A2673 /* SwiftClassParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwiftClassParser.m; sourceTree = "<group>"; };
+		2E14EC9B1E13B1FD005A2673 /* SwiftPropertySettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftPropertySettings.h; sourceTree = "<group>"; };
+		2E14EC9C1E13B1FD005A2673 /* SwiftPropertySettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwiftPropertySettings.m; sourceTree = "<group>"; };
+		2E14EC9E1E13B2BB005A2673 /* SwiftView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwiftView.xib; sourceTree = "<group>"; };
+		2E14EC9F1E13B2BB005A2673 /* SwiftView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftView.h; sourceTree = "<group>"; };
+		2E14ECA01E13B2BB005A2673 /* SwiftView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwiftView.m; sourceTree = "<group>"; };
 		2E5AE3B71DD6FF28006792E6 /* ModuleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleManager.h; sourceTree = "<group>"; };
 		2E5AE3B81DD6FF28006792E6 /* ModuleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModuleManager.m; sourceTree = "<group>"; };
 		2E5AE3BA1DD77B5B006792E6 /* objC.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = objC.json; sourceTree = "<group>"; };
@@ -112,6 +127,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E14EC931E139E5B005A2673 /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				2E14EC941E13A09D005A2673 /* swift.mtplate */,
+				2E14EC961E13A114005A2673 /* swift.json */,
+				2E14EC981E13A178005A2673 /* SwiftClassParser.h */,
+				2E14EC991E13A178005A2673 /* SwiftClassParser.m */,
+				2E14EC9B1E13B1FD005A2673 /* SwiftPropertySettings.h */,
+				2E14EC9C1E13B1FD005A2673 /* SwiftPropertySettings.m */,
+				2E14EC9E1E13B2BB005A2673 /* SwiftView.xib */,
+				2E14EC9F1E13B2BB005A2673 /* SwiftView.h */,
+				2E14ECA01E13B2BB005A2673 /* SwiftView.m */,
+			);
+			name = Swift;
+			sourceTree = "<group>";
+		};
 		2E5AE3BC1DD77B94006792E6 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +253,7 @@
 		2EEC54221DD632A1005D988D /* Languages */ = {
 			isa = PBXGroup;
 			children = (
+				2E14EC931E139E5B005A2673 /* Swift */,
 				2EEC54231DD632AD005D988D /* ObjC */,
 			);
 			name = Languages;
@@ -317,12 +349,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				2EEC54041DD591B2005D988D /* Assets.xcassets in Resources */,
+				2E14ECA11E13B2BB005A2673 /* SwiftView.xib in Resources */,
 				2EC182B31DD98E980087593A /* highlight in Resources */,
 				2EEAAF7A1E07BC67007AD305 /* UbuntuMono-B.ttf in Resources */,
+				2E14EC971E13A114005A2673 /* swift.json in Resources */,
 				2EEAAF7B1E07BC67007AD305 /* UbuntuMono-R.ttf in Resources */,
 				2EEC540F1DD591F9005D988D /* Main.storyboard in Resources */,
 				2EEC54261DD632BD005D988D /* objCHeader.mtplate in Resources */,
 				2EC182A61DD92BA70087593A /* ObjCView.xib in Resources */,
+				2E14EC951E13A09D005A2673 /* swift.mtplate in Resources */,
 				2E5AE3BB1DD77B5B006792E6 /* objC.json in Resources */,
 				2EEC54271DD632BD005D988D /* objCImplementation.mtplate in Resources */,
 				2EC182AE1DD985810087593A /* PreviewView.xib in Resources */,
@@ -397,9 +432,12 @@
 				2EC182B11DD98E310087593A /* PreviewView.m in Sources */,
 				2EEC54181DD59976005D988D /* ModelatorClass.m in Sources */,
 				2EC182AC1DD93C090087593A /* PropertyView.m in Sources */,
+				2E14ECA21E13B2BB005A2673 /* SwiftView.m in Sources */,
+				2E14EC9D1E13B1FD005A2673 /* SwiftPropertySettings.m in Sources */,
 				2E5AE3BF1DD77BBE006792E6 /* ModelatorModule.m in Sources */,
 				2EEB00C61DE204F500E06C6E /* ModelatorExporter.m in Sources */,
 				2EC182A41DD8F3640087593A /* ObjcPropertySettings.m in Sources */,
+				2E14EC9A1E13A178005A2673 /* SwiftClassParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

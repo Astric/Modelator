@@ -1,0 +1,16 @@
+{
+	"temlpateFiles":[
+		"swift.mtplate"
+	],
+    "temlpateTitles":[
+         "Swift"
+     ],
+    "exportFileExtensions":[
+         ".swift"
+    ],
+    "name":"Swift",
+    "parserClass":"SwiftClassParser",
+    "propertySettingsClass":"SwiftPropertySettings",
+    "propertyView":"SwiftView",
+    "highlightLanguageName":"swift"
+}

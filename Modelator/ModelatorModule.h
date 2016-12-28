@@ -18,5 +18,6 @@
 @property (nonatomic, strong) Class propertySettingsClass;
 @property (nonatomic, strong) NSString *propertyViewClassName;
 @property (nonatomic, strong) NSArray *exportFileExtensions;
+@property (nonatomic, strong) NSString *highlightLanguageName;
 
 @end

@@ -159,6 +159,7 @@
         ModelatorExporter *exporter = [[ModelatorExporter alloc] init];
         NSString *text = [exporter codeFromClass:mClass module:[[ModuleManager sharedManager] selectedModule]][self.segmentedControl.selectedSegment];
         dispatch_async(dispatch_get_main_queue(), ^{
+            self.previewView.highlightLanguage = [[ModuleManager sharedManager] selectedModule].highlightLanguageName;
             self.previewView.text = text;
         });
     });
